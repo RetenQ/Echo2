@@ -126,7 +126,15 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     {
         // 到鼓点了干什么    
         NotifyObjs();
-        PlayerRhyOn(); 
+        PlayerRhyOn();
+
+        // 测试payloads
+        if (koreographyEvent.HasIntPayload())
+        {
+            int tmp = koreographyEvent.GetIntValue();
+            Debug.Log("ITS :|||" + tmp);
+        }
+        //
     }
 
     private void PlayRealAudio()

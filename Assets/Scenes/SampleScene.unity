@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bd22bf66a719a21419132b5c628e5ee3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9204,11 +9204,11 @@ MonoBehaviour:
   realPlayer: {fileID: 0}
   realAudio: {fileID: 0}
   isActive: 0
-  eventID: 1234
+  eventID: M3
   RhyTolerance: 0.2
   RhyToleranceTimer: 0
   startPlay: 0
-  delayPlay: 0.3
+  delayPlay: 0
   isRhy: 0
   timeToArrive: 0
   delayPlay_Record: 0
@@ -9227,7 +9227,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: be0a50ee3d1e4af418212a3446ff73d6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd22bf66a719a21419132b5c628e5ee3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -9357,7 +9357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 0
-  koreography: {fileID: 11400000, guid: fc02a0558d1c4644fab5949a4dd907a7, type: 2}
+  koreography: {fileID: 11400000, guid: da6d0d40e181c5d4e826df11ae669724, type: 2}
   targetKoreographer: {fileID: 0}
 --- !u!1 &865182095
 GameObject:
@@ -12392,7 +12392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1502641318
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13148,7 +13148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1601916055
 Rigidbody2D:
   serializedVersion: 4
@@ -13882,7 +13882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1714604156
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14540,7 +14540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1864367370
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9051357485124932279
+--- !u!1 &1862146353146959235
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9051357485124932277}
-  - component: {fileID: 9051357485124932278}
-  - component: {fileID: 9051357485124932276}
-  - component: {fileID: 9051357485124932274}
-  - component: {fileID: 9051357485124932275}
-  - component: {fileID: 5716443878883437440}
+  - component: {fileID: 1862146353146959233}
+  - component: {fileID: 1862146353146959234}
+  - component: {fileID: 1862146353146959232}
+  - component: {fileID: 1862146353146959238}
+  - component: {fileID: 1862146353146959239}
+  - component: {fileID: 3107394662908914868}
   m_Layer: 9
-  m_Name: enemyBullet
+  m_Name: RocketBullet
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9051357485124932277
+--- !u!4 &1862146353146959233
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.24, y: -1.71, z: 0}
   m_LocalScale: {x: 0.3045, y: 0.3045, z: 0.3045}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9051357485124932278
+--- !u!212 &1862146353146959234
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,11 +74,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -691315721
-  m_SortingLayer: 2
+  m_SortingLayerID: 1741582911
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.6039734, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,14 +88,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &9051357485124932276
+--- !u!50 &1862146353146959232
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -109,13 +109,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &9051357485124932274
+--- !u!58 &1862146353146959238
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -125,13 +125,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &9051357485124932275
+--- !u!114 &1862146353146959239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37082c1624630cb46a30704da02fca94, type: 3}
@@ -140,7 +140,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   directlyMove: 0
   directlySpeed: 10
-  isRocket: 0
+  isRocket: 1
   shooter: {fileID: 0}
   damage: 10
   damageMul: 1
@@ -149,18 +149,18 @@ MonoBehaviour:
   ignoreStr: Enemy
   lerp: 0.5
   rocketSpeed: 8
-  targetPos: {x: -0.4744089, y: 0.2662874, z: 0}
+  targetPos: {x: 3.555031, y: -1.9136101, z: 0}
   rocketDirection: {x: 0, y: 0, z: 0}
   arrived: 0
   isActive: 1
---- !u!96 &5716443878883437440
+--- !u!96 &3107394662908914868
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051357485124932279}
+  m_GameObject: {fileID: 1862146353146959235}
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1

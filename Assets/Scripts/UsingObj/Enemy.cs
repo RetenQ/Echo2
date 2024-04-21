@@ -43,6 +43,7 @@ public class Enemy : Chara
     [Header("É¢Éäµ¯Ä»")]
     public float rotationAngle_Set;
     public float rotationChange;
+    public float MulSpeed;
     public int bulletNum;
     public int bulletWave; //²¨Êý
     public GameObject MulfirePoint;
@@ -50,6 +51,7 @@ public class Enemy : Chara
     [Header("360¶Èµ¯Ä»")]
     public GameObject FullfirePoint;
     public GameObject FullBullet;
+    public float FullSpeed;
     public int FullBulletNum;
     public int FullBulletWave;
     [Header("»ð¼ýµ¯")]
@@ -57,6 +59,7 @@ public class Enemy : Chara
     public int RocketBulletNum;
     public int RocketBulletWave;
     public float rocketBulletLifeTime;
+    public float RocketSpeed;
     public float rocketAngle;
     public float rocketLerp;
 
@@ -233,7 +236,7 @@ public class Enemy : Chara
     protected void CreateBullet(float rotationAngle, Vector3 firePoint, GameObject _bullet)
     {
         GameObject _createBullet = Instantiate(_bullet, firePoint, Quaternion.AngleAxis(rotationAngle, Vector3.forward));
-        _bullet.GetComponent<Bullet>().SetBulletDirect(this.attack , this.bulletSpeed ,  this);
+        _bullet.GetComponent<Bullet>().SetBulletDirect(this.attack , MulSpeed ,  this);
     }
 
     public void FullAttack()
@@ -268,7 +271,7 @@ public class Enemy : Chara
     private void CreateRocketBullet(float rotationAngle, Vector3 firePoint, GameObject _bullet)
     {
         GameObject _createBullet = Instantiate(_bullet, firePoint, Quaternion.AngleAxis(rotationAngle, Vector3.forward));
-        _bullet.GetComponent<Bullet>().SetBulletRocket(this.attack, this.bulletSpeed -2.0f
+        _bullet.GetComponent<Bullet>().SetBulletRocket(this.attack, RocketSpeed
             , target.transform.position, rocketLerp , this);
         _bullet.GetComponent<Bullet>().SetBulletLfveTime(rocketBulletLifeTime) ;
     }

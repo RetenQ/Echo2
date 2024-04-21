@@ -78,8 +78,8 @@ public class LaserSate : IState
 
     private List<Laser> lasers;
 
-    private float timer = 0.5f; 
-    private int maxCnt = 5; 
+    private float timer = 1.0f; 
+    private int maxCnt = 10; 
 
     public LaserSate(Boss1 _manager)
     {
@@ -120,6 +120,7 @@ public class LaserSate : IState
         }
 
         Debug.Log(maxCnt);
+        maxCnt = 10;
 
         lasers.Clear();
 

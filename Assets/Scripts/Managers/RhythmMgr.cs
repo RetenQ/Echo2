@@ -132,7 +132,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         if (koreographyEvent.HasIntPayload())
         {
             int tmp = koreographyEvent.GetIntValue();
-            Debug.Log("ITS :|||" + tmp);
+            // Debug.Log("ITS :|||" + tmp);
         }
         //
     }

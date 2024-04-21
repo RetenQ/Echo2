@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -16,6 +17,11 @@ public class Enemy : Chara
     [SerializeField] private bool isActive; //敌人是否启动
     [SerializeField] protected GameObject Player;
     [SerializeField] protected PlayerBase PlayerSc;
+    public GameObject firePoint; //射击位置
+    public GameObject Enemybullet;
+    public float bulletSpeed;
+
+
 
     public GameObject target;// 攻击等的目标，一般是Player
     public float AttackCD; // CD到了执行Attack参数
@@ -32,6 +38,32 @@ public class Enemy : Chara
     [Header("音效")]
     public AudioSource Audio_attack;
     public AudioSource Audio_hurt;
+
+    [Header("通用攻击脚本")]
+    [Header("散射弹幕")]
+    public float rotationAngle_Set;
+    public float rotationChange;
+    public int bulletNum;
+    public int bulletWave; //波数
+    public GameObject MulfirePoint;
+    public GameObject MulBullet;
+    [Header("360度弹幕")]
+    public GameObject FullfirePoint;
+    public GameObject FullBullet;
+    public int FullBulletNum;
+    public int FullBulletWave;
+    [Header("火箭弹")]
+    public GameObject RocketBullet;
+    public int RocketBulletNum;
+    public int RocketBulletWave;
+    public float rocketBulletLifeTime;
+    public float rocketAngle;
+    public float rocketLerp;
+
+    [Header("辅助")]
+    private bool nothing; // 作为分隔的变量
+
+
 
     protected override void ObjAwake()
     {
@@ -50,11 +82,33 @@ public class Enemy : Chara
         rb = GetComponent<Rigidbody2D>();
 
         hpBar = transform.Find("Char_State_UI").Find("HP").gameObject.GetComponent<Image>();
+        firePoint = transform.Find("Firepoint").gameObject; 
 
         Nav2dAgent = GetComponent<NavMeshAgent2D>();
         //room.registerEnemy(this);
 
         attackCDTimer = AttackCD;
+
+        // 通用项设置
+        if(MulBullet == null && Enemybullet != null)
+        {
+            MulBullet = Enemybullet; 
+        }
+
+        if(FullBullet == null && Enemybullet != null)
+        {
+            FullBullet = Enemybullet;
+        }
+
+        if (RocketBullet == null && Enemybullet != null)
+        {
+            RocketBullet = Enemybullet;
+        }
+
+        
+
+        MulfirePoint = firePoint;
+        FullfirePoint = gameObject ;  // 360散射以自身为中心
 
     }
 
@@ -81,6 +135,22 @@ public class Enemy : Chara
             }
         }
 
+
+        // 测试
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            MulAttack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            FullAttack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            RocketAttack();
+        }
     }
 
     private void DataUpdater()
@@ -112,8 +182,131 @@ public class Enemy : Chara
     }
 
 
+    // 下面为一些敌人的通用攻击参数
+    public virtual void MulAttack()
+    {
+        //弹幕攻击，默认是发射5枚一组的散弹
+        StartCoroutine(MulBulletAttack());
+
+    }
+
+    IEnumerator MulBulletAttack()
+    {
+        // Debug.Log("攻击");
+        // Vector3 _position = (target.transform.position - firePoint.transform.position); 
+        // 计算角度
+        Vector3 _position = MulfirePoint.transform.position;
+        rotationAngle_Set = 360 - (CalRotation(MulfirePoint.transform.position, target.transform.position));
+        float rotationAngle = rotationAngle_Set;
+        // Debug.Log("ITS"+rotationAngle);
+
+        // 子弹生成
+        for (int k = 0; k < bulletWave; k++)
+        {
+
+            int half = bulletNum / 2; //每次生产
+            CreateBullet(rotationAngle, _position, MulBullet);//先生产中心
+            for (int j = 0; j < half; j++)
+            {
+                rotationAngle += rotationChange;
+                CreateBullet(rotationAngle, _position, MulBullet);
+            }
+
+            rotationAngle = rotationAngle_Set; //归位
+
+            for (int w = 0; w < half; w++)
+            {
+                rotationAngle -= rotationChange;
+                CreateBullet(rotationAngle, _position, MulBullet);
+            }
+            rotationAngle = rotationAngle_Set; //归位
+            yield return new WaitForSeconds(0.5f);
+        }
+
+    }
+
+    protected float CalRotation(Vector3 a, Vector3 b)
+    {
+        float x = (a.x - b.x);
+        float y = (a.y - b.y);
+
+        float hypotenuse = Mathf.Sqrt(Mathf.Pow(x, 2f) + Mathf.Pow(y, 2f));
+
+        float theCos = x / hypotenuse;
+        float radian = Mathf.Acos(theCos);
+
+        float angle = 180 / (Mathf.PI / radian);
+
+        if (a.y >= b.y)
+        {
+            angle = -angle;
+        }
+
+        return angle - 90;
+
+    }
+
+    protected void CreateBullet(float rotationAngle, Vector3 firePoint, GameObject _bullet)
+    {
+        GameObject _createBullet = Instantiate(_bullet, firePoint, Quaternion.AngleAxis(rotationAngle, Vector3.forward));
+        _bullet.GetComponent<Bullet>().SetBulletDirect(this.attack , this.bulletSpeed ,  this);
+    }
+
+    public void FullAttack()
+    {
+        //OK
+        StartCoroutine(Fire360Bullet(FullfirePoint.transform.position));
+    }
+
+    IEnumerator Fire360Bullet(Vector3 firePosition)
+    {
+        float rotationAngle = 0f;
+        for (int i = 0; i < FullBulletWave; i++)
+        {
+            for (int j = 0; j < FullBulletNum; j++)
+            {
+                rotationAngle += (360 / FullBulletNum);
+                CreateBullet(rotationAngle, firePosition, FullBullet);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    // 火箭射击
+    public void RocketAttack()
+    {
+        StartCoroutine(RocketBulletAttack(FullfirePoint.transform.position));
+       /* GameObject _createBullet = Instantiate(RocketBullet, firePoint.transform.position, Quaternion.identity);
+        _createBullet.GetComponent<Bullet>().SetBulletRocket(this.attack, this.bulletSpeed, target.transform.position, this);*/
+    }
+
+    private void CreateRocketBullet(float rotationAngle, Vector3 firePoint, GameObject _bullet)
+    {
+        GameObject _createBullet = Instantiate(_bullet, firePoint, Quaternion.AngleAxis(rotationAngle, Vector3.forward));
+        _bullet.GetComponent<Bullet>().SetBulletRocket(this.attack, this.bulletSpeed -2.0f, target.transform.position, rocketLerp , this);
+        _bullet.GetComponent<Bullet>().SetBulletLfveTime(rocketBulletLifeTime) ;
+    }
+
+    IEnumerator RocketBulletAttack(Vector3 firePosition)
+    {
+        float rotationAngle = 0f;
+        for (int i = 0; i < RocketBulletWave; i++)
+        {
+            for (int j = 0; j < RocketBulletNum; j++)
+            {
+                rotationAngle += (360 / RocketBulletNum);
+                CreateRocketBullet(rotationAngle, firePosition, RocketBullet);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 
 
+    // ==============================
+
+    // 下面为编辑器中方便查看攻击范围的描述部分
     public float radius = 5f;
 
     // 圆的分段数，越大越平滑，可以在编辑器中调整

@@ -8886,6 +8886,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &664425402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664425403}
+  m_Layer: 9
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664425403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664425402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.66, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1400438054}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693232899
 GameObject:
   m_ObjectHideFlags: 0
@@ -11875,6 +11906,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321681232}
+  - {fileID: 664425403}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11912,7 +11944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 30
+  maxHp: 3000
   nowHp: 0
   attack: 0
   speed: 0
@@ -11924,6 +11956,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 9999
   activeArrange: 0
@@ -11935,6 +11970,20 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1400438058}
   Audio_hurt: {fileID: 1400438057}
+  rotationAngle_Set: 5
+  rotationChange: 20
+  bulletNum: 5
+  bulletWave: 1
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 36
+  FullBulletWave: 1
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 4
+  rocketAngle: 0
+  rocketLerp: 0.5
   radius: 0
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -12652,6 +12701,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 3.7
@@ -12663,6 +12715,20 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1502641319}
   Audio_hurt: {fileID: 1502641318}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 3.3
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -13321,6 +13387,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 0
@@ -13332,11 +13401,23 @@ MonoBehaviour:
   hpBar: {fileID: 1513718310}
   Audio_attack: {fileID: 1601916064}
   Audio_hurt: {fileID: 1601916063}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 5.72
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  bullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 10
 --- !u!82 &1601916063
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14100,6 +14181,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 0
@@ -14111,11 +14195,23 @@ MonoBehaviour:
   hpBar: {fileID: 588427613}
   Audio_attack: {fileID: 1714604157}
   Audio_hurt: {fileID: 1714604156}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 5.72
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  bullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 10
 --- !u!50 &1714604159
 Rigidbody2D:
   serializedVersion: 4
@@ -14800,6 +14896,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 3.7
@@ -14811,6 +14910,20 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1864367371}
   Audio_hurt: {fileID: 1864367370}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 3.3
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -15177,6 +15290,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 0
   activeArrange: 0
@@ -15188,6 +15304,20 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 0}
   Audio_hurt: {fileID: 0}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 0
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

@@ -432,6 +432,9 @@ public class PlayerBase : Chara
                     nowHp -= _damage;
                     isNoHurt = true;
                     StartCoroutine(noHurtToNomarl());
+
+                    // ÊÜ»÷ºóÕð¶¯
+                    CameraMgr.GetInstance().ShakeCamera(); 
                 }
 
                 _hurtby.UpdateLastAttack(this);

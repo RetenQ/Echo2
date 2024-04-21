@@ -284,7 +284,8 @@ public class Enemy : Chara
     private void CreateRocketBullet(float rotationAngle, Vector3 firePoint, GameObject _bullet)
     {
         GameObject _createBullet = Instantiate(_bullet, firePoint, Quaternion.AngleAxis(rotationAngle, Vector3.forward));
-        _bullet.GetComponent<Bullet>().SetBulletRocket(this.attack, this.bulletSpeed -2.0f, target.transform.position, rocketLerp , this);
+        _bullet.GetComponent<Bullet>().SetBulletRocket(this.attack, this.bulletSpeed -2.0f
+            , target.transform.position, rocketLerp , this);
         _bullet.GetComponent<Bullet>().SetBulletLfveTime(rocketBulletLifeTime) ;
     }
 

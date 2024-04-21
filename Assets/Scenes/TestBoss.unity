@@ -3347,7 +3347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1820776632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3717,7 +3717,7 @@ MonoBehaviour:
   PlayerSc: {fileID: 0}
   firePoint: {fileID: 0}
   Enemybullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 15
   target: {fileID: 0}
   AttackCD: 3
   activeArrange: 3
@@ -3731,21 +3731,21 @@ MonoBehaviour:
   Audio_hurt: {fileID: 1820776632}
   rotationAngle_Set: 7
   rotationChange: 5
-  MulSpeed: 15
+  MulSpeed: 10
   bulletNum: 10
   bulletWave: 1
   MulfirePoint: {fileID: 0}
   MulBullet: {fileID: 2168593394703369890, guid: 8305960cc896e5b4aad0fe8363c3a058, type: 3}
   FullfirePoint: {fileID: 0}
   FullBullet: {fileID: 619585421031054615, guid: fb27fc0f6dd88ff4fba0c3763d16b2e9, type: 3}
-  FullSpeed: 5
-  FullBulletNum: 36
+  FullSpeed: 12
+  FullBulletNum: 12
   FullBulletWave: 1
   RocketBullet: {fileID: 1862146353146959235, guid: f64877ca208805e44836a2840f2c8e24, type: 3}
-  RocketBulletNum: 10
+  RocketBulletNum: 20
   RocketBulletWave: 2
   rocketBulletLifeTime: 10
-  RocketSpeed: 10
+  RocketSpeed: 7
   rocketAngle: 0
   rocketLerp: 0.5
   radius: 15.69
@@ -3754,7 +3754,7 @@ MonoBehaviour:
   PayloadCnt: 0
   MovePoint1: {fileID: 786058378}
   MovePoint2: {fileID: 765451338}
-  MovePoint3: {fileID: 765451338}
+  MovePoint3: {fileID: 769550314}
   LaserObj: {fileID: 1511176921907633842, guid: c638f661289c2b249afcae3487c9c6fd, type: 3}
 --- !u!1 &1828134511
 GameObject:
@@ -4092,7 +4092,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 60c2310681789f047aa3b42ec7b8b7e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -179,7 +179,7 @@ public class Boss1 : FSM_Enemy
 
         if (tmp == 1)
         {
-            MulAttack();
+            MulAttack(5,11);
         }
         else if (tmp == 2)
         {

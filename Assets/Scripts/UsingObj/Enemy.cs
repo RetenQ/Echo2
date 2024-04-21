@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Enemy : Chara
@@ -173,6 +171,14 @@ public class Enemy : Chara
     public virtual void MulAttack()
     {
         //弹幕攻击，默认是发射5枚一组的散弹
+        StartCoroutine(MulBulletAttack());
+
+    }
+
+    public virtual void MulAttack(int min , int max)
+    {
+        //弹幕攻击，默认是发射5枚一组的散弹
+        this.bulletNum = Random.Range(min, max);
         StartCoroutine(MulBulletAttack());
 
     }

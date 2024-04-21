@@ -40,6 +40,7 @@ public class BaseObj : MonoBehaviour
     [Header("节奏响应部分")]
     public bool isRhyObj = false; //是否是可以响应节奏的物体
     public bool isRhyAct = false;
+    public int KorePaylaod; 
 
     private void Awake()
     {
@@ -175,10 +176,11 @@ public class BaseObj : MonoBehaviour
         }
     }
 
-    public void RhyActOn()
+    public void RhyActOn(int num)
     {
         // 将Rhy操作打开，具体释放时机会在Update中进行
         isRhyAct = true;
+        KorePaylaod = num; 
     }
 
     public virtual void RhyAction()

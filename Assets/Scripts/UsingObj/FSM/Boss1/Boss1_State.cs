@@ -5,7 +5,7 @@ using UnityEngine;
 //不止一个类，把要用到的转化状态的类都写在这里了    
 public class Boss1_State : IState
 {
-    // idle
+    // Idle
     private Boss1 manager;
 
     public Boss1_State(Boss1 _manager)
@@ -29,43 +29,123 @@ public class Boss1_State : IState
 
 }
 
-public class PatrolState : IState
+public class ChaseState : IState
 {
     private Boss1 manager;
     private Enemy enemy;
-    //通过下标查找和替换巡逻点
-    public PatrolState(Boss1 _manager)
+    private float maxTime = 2.0f; 
+    public ChaseState(Boss1 _manager)
     {
         this.manager = _manager;
     }
     public void OnEnter()
     {
+        manager.Nav2dAgent.destination = manager.target.transform.position;
     }
     public void OnUpdate()
     {
+        manager.Nav2dAgent.destination = manager.target.transform.position;
+        if(Vector2.Distance(manager.transform.position , manager.target.transform.position) <= 0.5f)
+        {
+            manager.TransitionState(StateType.Idle); 
+        }
 
+        // 时间耗尽也退出
+        if(maxTime <= 0.01f)
+        {
+            manager.TransitionState(StateType.Idle);
+
+        }
+        else
+        {
+            maxTime -= Time.deltaTime; 
+        }
 
     }
     public void OnExit()
     {
-        
+        manager.RandomAttack();
+        manager.transform.position = manager.MovePoint1.transform.position; //复位到1号位
     }
 
 }
 
-public class AttackState : IState
+public class LaserSate : IState
 {
     private Boss1 manager;
 
-    private AnimatorStateInfo info;
+    private List<Laser> lasers;
 
-    public AttackState(Boss1 _manager)
+    private float timer = 0.2f; 
+    private int maxCnt = 5; 
+
+    public LaserSate(Boss1 _manager)
     {
         this.manager = _manager;
         //构造方法，绑定对应的FSM
     }
     public void OnEnter()
     {
+        lasers = new List<Laser>();
+        createLaser();
+    }
+    public void OnUpdate()
+    {
+        if(maxCnt> 0)
+        {
+            if (timer <= 0)
+            {
+                createLaser();
+                maxCnt--;
+                timer = 0.2f;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            manager.TransitionState(StateType.Idle); 
+        }
+
+    }
+    public void OnExit()
+    {
+        foreach(Laser l in lasers)
+        {
+            l.ActiveLaser();
+            
+        }
+
+        lasers.Clear();
+    }
+
+    private void createLaser()
+    {
+        GameObject tmpL = GameObject.Instantiate(manager.LaserObj, manager.transform.position, Quaternion.identity);
+        Laser _laser = tmpL.GetComponent<Laser>();
+        _laser.setLaser(manager.target, "Player", manager.attack, manager);
+        _laser.putLaser();
+        lasers.Add(_laser); 
+    }
+
+}
+
+
+public class SoulBox_State : IState
+{
+    private Boss1 manager;
+    private Enemy enemy;
+
+    public SoulBox_State(Boss1 _manager)
+    {
+        this.manager = _manager;
+        //构造方法，绑定对应的FSM
+    }
+    public void OnEnter()
+    {
+
     }
     public void OnUpdate()
     {
@@ -73,6 +153,52 @@ public class AttackState : IState
     }
     public void OnExit()
     {
+        // 退出时自动攻击一次
+        manager.RandomAttack();
+    }
+
+}
+
+public class Move_State : IState
+{
+    private Boss1 manager;
+    private Enemy enemy;
+    private GameObject des; 
+
+    public Move_State(Boss1 _manager)
+    {
+        this.manager = _manager;
+        //构造方法，绑定对应的FSM
+    }
+    public void OnEnter()
+    {
+        int tmp = Random.Range(1, 4); 
+        if(tmp == 1)
+        {
+            des = manager.MovePoint1; 
+        }else if( tmp == 2)
+        {
+            des = manager.MovePoint2;
+
+        }
+        else
+        {
+            des = manager.MovePoint3;
+
+        }
+    }
+    public void OnUpdate()
+    {
+       manager.Nav2dAgent.destination = des.transform.position; // 移动
+       manager.PayloadCnt= 0;
+       if(Vector2.Distance(manager.transform.position , des.transform.position) < 0.01f){
+            manager.TransitionState(StateType.Laser);
+        }
+
+    }
+    public void OnExit()
+    {
+        manager.RandomAttack();
     }
 
 }
@@ -105,27 +231,3 @@ public class DeadState : IState
 
 }
 
-public class DrumState : IState
-{
-    private Boss1 manager;
-    private Enemy enemy;
-
-    public DrumState(Boss1 _manager)
-    {
-        this.manager = _manager;
-        //构造方法，绑定对应的FSM
-    }
-    public void OnEnter()
-    {
-
-    }
-    public void OnUpdate()
-    {
-
-    }
-    public void OnExit()
-    {
-
-    }
-
-}

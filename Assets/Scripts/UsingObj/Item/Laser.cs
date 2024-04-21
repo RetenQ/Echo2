@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            SetLaser();
+            putLaser();
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -40,15 +40,16 @@ public class Laser : MonoBehaviour
         }
     }
 
-    public void Reset(GameObject _destination , string _targetTag , BaseObj _user)
+    public void setLaser(GameObject _destination , string _targetTag , float _damage ,  BaseObj _user)
     {
         this.destination = _destination;
         this.targetTag = _targetTag;
+        this.damage = _damage;
         this.LaserUser= _user;
     }
 
     // 在挂载函数的物体和一个名为destination的gameObject之间绘制一条红色的线
-    public void SetLaser()
+    public void putLaser()
     {
         lineRenderer.material.color = IniColor; // 设置线段颜色
 

@@ -1,0 +1,1061 @@
+fileFormatVersion: 2
+guid: c44d1a4da9cd3c948b4cb96173d9dd27
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: MagicBarrier_64x64_Frame_0
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 133
+      height: 133
+    spriteID: cbcdb4538288a3145abf8b6275c457fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: MagicBarrier_64x64_Frame_1
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 145
+      width: 133
+      height: 133
+    spriteID: d1c2897d5f75d6b41bc830a40770d609
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 145}
+  - name: MagicBarrier_64x64_Frame_2
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 7a9207e2b7cf2f74da21964a5be239d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 286}
+  - name: MagicBarrier_64x64_Frame_3
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 427
+      width: 133
+      height: 133
+    spriteID: 20ee75517f9074f4c8c9a8b1ef9b513b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 427}
+  - name: MagicBarrier_64x64_Frame_4
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 40dfa43b0376b1f4e9dba45cb2d13bfc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 568}
+  - name: MagicBarrier_64x64_Frame_5
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 16b2492163e574743870a278ae485052
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 709}
+  - name: MagicBarrier_64x64_Frame_6
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 850
+      width: 133
+      height: 133
+    spriteID: 6f68aefc27d30f8499ea9ab3f302bb82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 850}
+  - name: MagicBarrier_64x64_Frame_7
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 4
+      width: 133
+      height: 133
+    spriteID: 84b39b93ef8529a4c948102857374b52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 4}
+  - name: MagicBarrier_64x64_Frame_8
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 145
+      width: 133
+      height: 133
+    spriteID: 718beb322c89e0d4f92508a76fd15ab0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 145}
+  - name: MagicBarrier_64x64_Frame_9
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 1c7e25f6cea0b614d9bf7f92629b4f91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 286}
+  - name: MagicBarrier_64x64_Frame_10
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 427
+      width: 133
+      height: 133
+    spriteID: 2a611c7de4c75cb49b6d9aafa688a153
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 427}
+  - name: MagicBarrier_64x64_Frame_11
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 568
+      width: 133
+      height: 133
+    spriteID: cd2b65b82bed90b4891e86f02135e516
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 568}
+  - name: MagicBarrier_64x64_Frame_12
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 709
+      width: 133
+      height: 133
+    spriteID: d4821a60fe1ff5545aa14233735dde2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 709}
+  - name: MagicBarrier_64x64_Frame_13
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 850
+      width: 133
+      height: 133
+    spriteID: e7695b17a0e0b844db5794ee2db78ce9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 850}
+  - name: MagicBarrier_64x64_Frame_14
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 4
+      width: 133
+      height: 133
+    spriteID: 8f35c95aeeb8d934bbbea0fad9fb9add
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 4}
+  - name: MagicBarrier_64x64_Frame_15
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 145
+      width: 133
+      height: 133
+    spriteID: b9ae6acfcd4f7a643972c2a7107d48b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 145}
+  - name: MagicBarrier_64x64_Frame_16
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 286
+      width: 133
+      height: 133
+    spriteID: ff5b1a3215a1ca64495f3a8b3743c0e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 286}
+  - name: MagicBarrier_64x64_Frame_17
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 427
+      width: 133
+      height: 133
+    spriteID: ff0966b4d7723024fa913c9aaef48ef4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 427}
+  - name: MagicBarrier_64x64_Frame_18
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 44a61dbfca906704c9979d4cee3d0978
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 568}
+  - name: MagicBarrier_64x64_Frame_19
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 245e6e47be707a14986aa10106d117d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 709}
+  - name: MagicBarrier_64x64_Frame_20
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 850
+      width: 133
+      height: 133
+    spriteID: acfd42357cc7511469dd874986752369
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 850}
+  - name: MagicBarrier_64x64_Frame_21
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 4
+      width: 133
+      height: 133
+    spriteID: 5b586a0cf0453ed45990562b81e970c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 4}
+  - name: MagicBarrier_64x64_Frame_22
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 145
+      width: 133
+      height: 133
+    spriteID: c098f512ac4f04a43bb79154f3037620
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 145}
+  - name: MagicBarrier_64x64_Frame_23
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 9ff9366ef6ce0ad46b6ae065dbc99af5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 286}
+  - name: MagicBarrier_64x64_Frame_24
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 427
+      width: 133
+      height: 133
+    spriteID: 6f3fcc32a8766dd47995d5653653a337
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 427}
+  - name: MagicBarrier_64x64_Frame_25
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 4a51c68cd6876ce42a526584288434fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 568}
+  - name: MagicBarrier_64x64_Frame_26
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 7de181ba1e7bb2244823a5e1b796b48d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 709}
+  - name: MagicBarrier_64x64_Frame_27
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 850
+      width: 133
+      height: 133
+    spriteID: aa9d97913b05f0447954af8c97398a5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 850}
+  - name: MagicBarrier_64x64_Frame_28
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 4
+      width: 133
+      height: 133
+    spriteID: 8c61fa86269a92d4ea0212a0271573ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 568, y: 4}
+  - name: MagicBarrier_64x64_Frame_29
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 145
+      width: 133
+      height: 133
+    spriteID: 5e94c486a18e3af499b5298c4964cff3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 568, y: 145}
+  - name: MagicBarrier_64x64_Frame_30
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 42b8715d93cb0fc46987187ba84ca170
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 568, y: 286}
+  - name: MagicBarrier_64x64_Frame_31
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 427
+      width: 133
+      height: 133
+    spriteID: b20bd4cb6d8b12845b1c373477c53b01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 568, y: 427}
+  - name: MagicBarrier_64x64_Frame_32
+    originalName: 
+    pivot: {x: 0.46616542, y: 0.2706767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 568
+      width: 133
+      height: 133
+    spriteID: d3f18513ef58d1a4d9404dfbe165e3d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 568, y: 568}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 301328407
+    name: MagicBarrier_64x64
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MagicBarrier_64x64_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: cbcdb4538288a3145abf8b6275c457fe
+    - name: MagicBarrier_64x64_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: d1c2897d5f75d6b41bc830a40770d609
+    - name: MagicBarrier_64x64_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 7a9207e2b7cf2f74da21964a5be239d6
+    - name: MagicBarrier_64x64_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 20ee75517f9074f4c8c9a8b1ef9b513b
+    - name: MagicBarrier_64x64_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 40dfa43b0376b1f4e9dba45cb2d13bfc
+    - name: MagicBarrier_64x64_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 16b2492163e574743870a278ae485052
+    - name: MagicBarrier_64x64_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 6f68aefc27d30f8499ea9ab3f302bb82
+    - name: MagicBarrier_64x64_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 84b39b93ef8529a4c948102857374b52
+    - name: MagicBarrier_64x64_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 718beb322c89e0d4f92508a76fd15ab0
+    - name: MagicBarrier_64x64_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 1c7e25f6cea0b614d9bf7f92629b4f91
+    - name: MagicBarrier_64x64_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 2a611c7de4c75cb49b6d9aafa688a153
+    - name: MagicBarrier_64x64_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: cd2b65b82bed90b4891e86f02135e516
+    - name: MagicBarrier_64x64_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: d4821a60fe1ff5545aa14233735dde2a
+    - name: MagicBarrier_64x64_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: e7695b17a0e0b844db5794ee2db78ce9
+    - name: MagicBarrier_64x64_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 8f35c95aeeb8d934bbbea0fad9fb9add
+    - name: MagicBarrier_64x64_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: b9ae6acfcd4f7a643972c2a7107d48b7
+    - name: MagicBarrier_64x64_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: ff5b1a3215a1ca64495f3a8b3743c0e1
+    - name: MagicBarrier_64x64_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: ff0966b4d7723024fa913c9aaef48ef4
+    - name: MagicBarrier_64x64_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 44a61dbfca906704c9979d4cee3d0978
+    - name: MagicBarrier_64x64_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 245e6e47be707a14986aa10106d117d9
+    - name: MagicBarrier_64x64_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: acfd42357cc7511469dd874986752369
+    - name: MagicBarrier_64x64_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 5b586a0cf0453ed45990562b81e970c0
+    - name: MagicBarrier_64x64_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: c098f512ac4f04a43bb79154f3037620
+    - name: MagicBarrier_64x64_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 9ff9366ef6ce0ad46b6ae065dbc99af5
+    - name: MagicBarrier_64x64_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 6f3fcc32a8766dd47995d5653653a337
+    - name: MagicBarrier_64x64_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 4a51c68cd6876ce42a526584288434fa
+    - name: MagicBarrier_64x64_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 7de181ba1e7bb2244823a5e1b796b48d
+    - name: MagicBarrier_64x64_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: aa9d97913b05f0447954af8c97398a5e
+    - name: MagicBarrier_64x64_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 8c61fa86269a92d4ea0212a0271573ba
+    - name: MagicBarrier_64x64_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 5e94c486a18e3af499b5298c4964cff3
+    - name: MagicBarrier_64x64_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: 42b8715d93cb0fc46987187ba84ca170
+    - name: MagicBarrier_64x64_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: b20bd4cb6d8b12845b1c373477c53b01
+    - name: MagicBarrier_64x64_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: -30
+        y: -36
+        width: 135
+        height: 133
+      spriteId: d3f18513ef58d1a4d9404dfbe165e3d7
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

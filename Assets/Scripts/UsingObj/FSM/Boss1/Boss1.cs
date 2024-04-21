@@ -85,9 +85,9 @@ public class Boss1 : FSM_Enemy
         // Update就执行当前的Update
         currentState.OnUpdate();
 
-        if(Input.GetKeyDown(KeyCode.U)) MulAttack();
+/*        if(Input.GetKeyDown(KeyCode.U)) MulAttack();
         if(Input.GetKeyDown(KeyCode.I)) FullAttack();
-        if(Input.GetKeyDown(KeyCode.O)) RocketAttack();
+        if(Input.GetKeyDown(KeyCode.O)) RocketAttack();*/
 
     }
 
@@ -96,6 +96,12 @@ public class Boss1 : FSM_Enemy
         // Boss不自动寻找
         // 寻找player
         // Nav2dAgent.destination = PlayerSc.transform.position;
+    }
+
+    public override void ObjDeath()
+    {
+        base.ObjDeath();
+        Destroy(gameObject);
     }
 
     //     public void TransitionState(StateType type)
@@ -165,7 +171,7 @@ public class Boss1 : FSM_Enemy
     public void RandomAttack()
     {
         int tmp = Random.Range(1, 4);
-        Debug.Log(tmp);
+        // Debug.Log(tmp);
 
         if (tmp == 1)
         {

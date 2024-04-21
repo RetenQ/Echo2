@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBase : Chara
 {
@@ -410,6 +411,40 @@ public class PlayerBase : Chara
         //Debug.Log(res);
         animator.Play(res);
 
+    }
+
+
+    public override void Hurt(float _damage, BaseObj _hurtby)
+    {
+        if (!isdash)
+        {
+            if (gameObject.CompareTag("Wall"))
+            {
+                // 目前不做墙体伤害
+            }
+            else
+            {
+
+                nowHp -= _damage;
+            }
+
+            _hurtby.UpdateLastAttack(this);
+            lastHurtby = _hurtby;
+        }
+
+    }
+
+    public override void ObjDeath()
+    {
+        base.ObjDeath();
+        ReloadScene();
+    }
+
+    // ! 测试用，重启游戏
+    public void ReloadScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
 }

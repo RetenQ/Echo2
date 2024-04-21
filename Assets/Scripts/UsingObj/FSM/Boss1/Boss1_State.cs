@@ -76,7 +76,7 @@ public class LaserSate : IState
 
     private List<Laser> lasers;
 
-    private float timer = 0.2f; 
+    private float timer = 0.5f; 
     private int maxCnt = 5; 
 
     public LaserSate(Boss1 _manager)
@@ -96,7 +96,6 @@ public class LaserSate : IState
             if (timer <= 0)
             {
                 createLaser();
-                maxCnt--;
                 timer = 0.2f;
             }
             else
@@ -118,6 +117,8 @@ public class LaserSate : IState
             
         }
 
+        Debug.Log(maxCnt);
+
         lasers.Clear();
     }
 
@@ -127,7 +128,9 @@ public class LaserSate : IState
         Laser _laser = tmpL.GetComponent<Laser>();
         _laser.setLaser(manager.target, "Player", manager.attack, manager);
         _laser.putLaser();
-        lasers.Add(_laser); 
+        lasers.Add(_laser);
+        maxCnt--;
+
     }
 
 }

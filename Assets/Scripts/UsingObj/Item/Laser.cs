@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -22,15 +23,17 @@ public class Laser : MonoBehaviour
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-
-
+        /*        lineRenderer = GetComponent<LineRenderer>();
+         *        使用生成+setLaser的时候要手动添加
+         *        
+        */
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
+            
             putLaser();
         }
 
@@ -46,6 +49,8 @@ public class Laser : MonoBehaviour
         this.targetTag = _targetTag;
         this.damage = _damage;
         this.LaserUser= _user;
+        lineRenderer = GetComponent<LineRenderer>();
+
     }
 
     // 在挂载函数的物体和一个名为destination的gameObject之间绘制一条红色的线
@@ -91,6 +96,14 @@ public class Laser : MonoBehaviour
             //SetLaser(); // 绘制橙色的线
         }
 
+        StartCoroutine(LaserEnd_IE());
+
+    }
+
+    IEnumerator LaserEnd_IE()
+    {
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject); // 释放后就摧毁
+
     }
 }

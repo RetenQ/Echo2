@@ -138,12 +138,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  directlyMove: 0
+  directlySpeed: 0
+  isRocket: 0
   shooter: {fileID: 0}
   damage: 1
   damageMul: 1
   maxLifeTime: 5
   targetStr: Enemy
   ignoreStr: Player
+  lerp: 0
+  rocketSpeed: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  rocketDirection: {x: 0, y: 0, z: 0}
+  arrived: 0
   isActive: 1
 --- !u!96 &3081672534021327908
 TrailRenderer:

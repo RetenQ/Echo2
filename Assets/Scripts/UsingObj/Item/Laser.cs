@@ -90,5 +90,7 @@ public class Laser : MonoBehaviour
 
             //SetLaser(); // 绘制橙色的线
         }
+
+        Destroy(gameObject); // 释放后就摧毁
     }
 }

@@ -41,6 +41,8 @@ public class ChaseState : IState
     public void OnEnter()
     {
         manager.Nav2dAgent.destination = manager.target.transform.position;
+        manager.RandomAttack();
+
     }
     public void OnUpdate()
     {
@@ -120,6 +122,9 @@ public class LaserSate : IState
         Debug.Log(maxCnt);
 
         lasers.Clear();
+
+        manager.RandomAttack();
+
     }
 
     private void createLaser()

@@ -149,9 +149,13 @@ public class Boss1 : FSM_Enemy
         {
             BasicAttack();
         }
+        else if(KorePayload == 6)
+        {
+             RandomAttack();
+        }
         else
         {
-            RandomAttack();
+            Debug.Log("£°£°£°“‚¡œÕ‚");
         }
 
     }

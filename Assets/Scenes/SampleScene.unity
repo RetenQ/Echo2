@@ -7907,6 +7907,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &515300895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515300896}
+  - component: {fileID: 515300897}
+  m_Layer: 0
+  m_Name: TestLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515300896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515300895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.97145486, y: 0.9776541, z: -0.003078864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &515300897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515300895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3193436f823bdcc47a08210ef1eec96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetA: {fileID: 1526518993}
+  targetB: {fileID: 1400438054}
+  targetC: {fileID: 0}
+  delaySec: 0.3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -11981,8 +12029,10 @@ MonoBehaviour:
   FullBulletNum: 36
   FullBulletWave: 1
   RocketBullet: {fileID: 0}
-  RocketBulletNum: 4
-  rocketAngle: 0
+  RocketBulletNum: 10
+  RocketBulletWave: 2
+  rocketBulletLifeTime: 10
+  rocketAngle: 100
   rocketLerp: 0.5
   radius: 0
   segments: 50
@@ -12727,6 +12777,8 @@ MonoBehaviour:
   FullBulletWave: 0
   RocketBullet: {fileID: 0}
   RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
   rocketAngle: 0
   rocketLerp: 0
   radius: 3.3
@@ -13413,6 +13465,8 @@ MonoBehaviour:
   FullBulletWave: 0
   RocketBullet: {fileID: 0}
   RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
   rocketAngle: 0
   rocketLerp: 0
   radius: 5.72
@@ -14207,6 +14261,8 @@ MonoBehaviour:
   FullBulletWave: 0
   RocketBullet: {fileID: 0}
   RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
   rocketAngle: 0
   rocketLerp: 0
   radius: 5.72
@@ -14922,6 +14978,8 @@ MonoBehaviour:
   FullBulletWave: 0
   RocketBullet: {fileID: 0}
   RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
   rocketAngle: 0
   rocketLerp: 0
   radius: 3.3
@@ -15316,6 +15374,8 @@ MonoBehaviour:
   FullBulletWave: 0
   RocketBullet: {fileID: 0}
   RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
   rocketAngle: 0
   rocketLerp: 0
   radius: 0

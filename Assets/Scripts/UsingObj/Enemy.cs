@@ -135,22 +135,6 @@ public class Enemy : Chara
             }
         }
 
-
-        // ≤‚ ‘
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            MulAttack();
-        }
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            FullAttack();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            RocketAttack();
-        }
     }
 
     private void DataUpdater()

@@ -1,63 +1,59 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Laser : MonoBehaviour
 {
-    public Transform targetA; // 第一个目标点
-    public Transform targetB; // 第二个目标点
-    public Transform targetC; // 第三个目标点
-    public float delaySec = 1f; // 延迟时间
-
+    public GameObject destination; // 目标物体
     private LineRenderer lineRenderer; // LineRenderer组件
 
-    private void Start()
+    void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 2;
-
-        StartCoroutine(StartRaycast());
-        StartCoroutine(StartExtraRaycast());
+        lineRenderer.startColor = Color.red;
+        lineRenderer.endColor = Color.red;
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
     }
 
-    IEnumerator StartRaycast()
+    private void Update()
     {
-        yield return new WaitForSeconds(delaySec);
-
-        RaycastHit2D[] hits = Physics2D.LinecastAll(targetA.position, targetB.position);
-
-        foreach (RaycastHit2D hit in hits)
+        if (Input.GetKeyDown(KeyCode.U))
         {
-            Debug.Log("Hit object name: " + hit.transform.name);
+            SetLaser();
         }
 
-        // 更新LineRenderer的位置
-        lineRenderer.SetPosition(0, targetA.position);
-        lineRenderer.SetPosition(1, targetB.position);
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ActiveLaser();
+        }
     }
 
-    IEnumerator StartExtraRaycast()
+    // 在挂载函数的物体和一个名为destination的gameObject之间绘制一条红色的线
+    public void SetLaser()
     {
-        yield return new WaitForSeconds(delaySec);
-
-        Vector2 direction = (targetC.position - targetA.position).normalized;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(targetA.position, direction);
-
-        foreach (RaycastHit2D hit in hits)
+        if (destination != null)
         {
-            Debug.Log("Extra Hit object name: " + hit.transform.name);
+            lineRenderer.positionCount = 2;
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, destination.transform.position);
         }
+    }
 
+    // 在挂载函数的物体和一个名为destination的gameObject之间绘制一个橙色的线，并且打印其中所有的物体的名字
+    public void ActiveLaser()
+    {
+        if (destination != null)
+        {
+            lineRenderer.startColor = Color.yellow;
+            lineRenderer.endColor = Color.yellow;
+
+            RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, destination.transform.position);
+
+            foreach (RaycastHit2D hit in hits)
+            {
+                Debug.Log("Hit object name: " + hit.transform.name);
+            }
+
+            //SetLaser(); // 绘制橙色的线
+        }
     }
 }
-/*
-    private void OnDrawGizmos()
-    {
-        // 在编辑器中绘制Gizmos
-        if (targetA != null && targetC != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(targetA.position, targetC.position);
-        }
-    }
-}*/

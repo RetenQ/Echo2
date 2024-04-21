@@ -78,7 +78,7 @@ public class LaserSate : IState
 
     private List<Laser> lasers;
 
-    private float timer = 1.0f; 
+    private float timer = 0.5f; 
     private int maxCnt = 10; 
 
     public LaserSate(Boss1 _manager)
@@ -98,7 +98,7 @@ public class LaserSate : IState
             if (timer <= 0)
             {
                 createLaser();
-                timer = 0.2f;
+                timer = 0.5f;
             }
             else
             {
@@ -195,6 +195,8 @@ public class Move_State : IState
             des = manager.MovePoint3;
 
         }
+
+        manager.Nav2dAgent.speed += 5; //加速移动
     }
     public void OnUpdate()
     {
@@ -207,6 +209,8 @@ public class Move_State : IState
     }
     public void OnExit()
     {
+        manager.Nav2dAgent.speed -= 5; //加速移动
+
         manager.RandomAttack();
     }
 

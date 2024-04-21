@@ -2707,6 +2707,8 @@ MonoBehaviour:
   lastMovement: {x: 0, y: 0}
   mouseLocation: {x: 0, y: 0}
   facing: 0
+  noHurtTime: 1
+  isNoHurt: 0
   dashCD: 2
   dashMul: 3
   dashTimer: -99

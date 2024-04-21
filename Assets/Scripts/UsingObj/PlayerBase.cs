@@ -20,6 +20,9 @@ public class PlayerBase : Chara
 
     [SerializeField] private int facing;
 
+    public float noHurtTime; //无敌时间
+    [SerializeField] public bool isNoHurt = false;
+
     [Header("冲刺数据")]
     public float dashCD = 2;
     public float dashMul;  // 此处是dash的加速倍数
@@ -416,21 +419,33 @@ public class PlayerBase : Chara
 
     public override void Hurt(float _damage, BaseObj _hurtby)
     {
-        if (!isdash)
+        if(!isNoHurt)
         {
-            if (gameObject.CompareTag("Wall"))
+            if (!isdash)
             {
-                // 目前不做墙体伤害
-            }
-            else
-            {
+                if (gameObject.CompareTag("Wall"))
+                {
+                    // 目前不做墙体伤害
+                }
+                else
+                {
+                    nowHp -= _damage;
+                    isNoHurt = true;
+                    StartCoroutine(noHurtToNomarl());
+                }
 
-                nowHp -= _damage;
+                _hurtby.UpdateLastAttack(this);
+                lastHurtby = _hurtby;
             }
-
-            _hurtby.UpdateLastAttack(this);
-            lastHurtby = _hurtby;
         }
+
+
+    }
+
+    IEnumerator noHurtToNomarl()
+    {
+        yield return new WaitForSeconds(noHurtTime);
+        isNoHurt = false; 
 
     }
 

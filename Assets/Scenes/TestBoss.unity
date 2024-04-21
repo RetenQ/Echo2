@@ -4050,7 +4050,7 @@ MonoBehaviour:
   PlayerSc: {fileID: 0}
   firePoint: {fileID: 0}
   Enemybullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 0
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 3
   activeArrange: 3
@@ -4065,15 +4065,15 @@ MonoBehaviour:
   rotationAngle_Set: 5
   rotationChange: 5
   bulletNum: 7
-  bulletWave: 0
+  bulletWave: 1
   MulfirePoint: {fileID: 0}
   MulBullet: {fileID: 0}
   FullfirePoint: {fileID: 0}
   FullBullet: {fileID: 0}
-  FullBulletNum: 20
+  FullBulletNum: 36
   FullBulletWave: 1
   RocketBullet: {fileID: 0}
-  RocketBulletNum: 8
+  RocketBulletNum: 10
   RocketBulletWave: 2
   rocketBulletLifeTime: 10
   rocketAngle: 0

@@ -84,6 +84,11 @@ public class Boss1 : FSM_Enemy
 
         // Update就执行当前的Update
         currentState.OnUpdate();
+
+        if(Input.GetKeyDown(KeyCode.U)) MulAttack();
+        if(Input.GetKeyDown(KeyCode.I)) FullAttack();
+        if(Input.GetKeyDown(KeyCode.O)) RocketAttack();
+
     }
 
     public override void FindPlayer()
@@ -100,43 +105,77 @@ public class Boss1 : FSM_Enemy
         base.RhyAction();
         // 节奏点上的行动
 
-        if(KorePaylaod == 0)
-        {
-            PayloadCnt++ ;
-        }
+        PayloadCnt++;
 
-        if (KorePaylaod == 1 && PayloadCnt >= 3)
+        if (KorePayload == 1)
         {
             TransitionState(StateType.Chase);
-        }else if(KorePaylaod == 2 && PayloadCnt >= 3)
+        }
+        else if (KorePayload == 2)
         {
             TransitionState(StateType.Laser);
-        }else if(KorePaylaod == 3 && PayloadCnt >= 3)
+        }
+        else if (KorePayload == 3 )
         {
             TransitionState(StateType.Move);
-        }else if(KorePaylaod == 4 && PayloadCnt >= 3)
+        }
+        else if (KorePayload == 4 )
         {
             TransitionState(StateType.SoulBox);
+        }
+        else if (KorePayload == 9)
+        {
+            int tmpState = Random.Range(0, PayloadCnt);
+            if (tmpState == 1 )
+            {
+                TransitionState(StateType.Chase);
+            }
+            else if (tmpState == 2)
+            {
+                TransitionState(StateType.Laser);
+            }
+            else if (tmpState == 3)
+            {
+                TransitionState(StateType.Move);
+            }
+
+        }else if(KorePayload == 5)
+        {
+            BasicAttack();
         }
         else
         {
             RandomAttack();
         }
-       
+
+    }
+
+    public void BasicAttack()
+    {
+       // Audio_attack.Play();
+        GameObject bullet_temp = Instantiate(Enemybullet, firePoint.transform.position, Quaternion.identity);
+        bullet_temp.GetComponent<Bullet>().SetBullet(attack, this); //将子弹伤害设置为角色攻击力
+
+        // 计算到玩家的方向
+        Vector2 direction = (Player.transform.position - firePoint.transform.position).normalized;
+        // Debug.Log("Dir" + direction);
+        bullet_temp.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
     }
 
     public void RandomAttack()
     {
-        int tmp = Random.Range(1, 4); 
+        int tmp = Random.Range(1, 4);
         Debug.Log(tmp);
 
-        if(tmp == 1)
+        if (tmp == 1)
         {
             MulAttack();
-        }else if(tmp == 2)
+        }
+        else if (tmp == 2)
         {
             FullAttack();
-        }else if(tmp == 3)
+        }
+        else if (tmp == 3)
         {
             RocketAttack();
         }

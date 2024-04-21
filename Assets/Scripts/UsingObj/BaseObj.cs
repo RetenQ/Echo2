@@ -40,7 +40,7 @@ public class BaseObj : MonoBehaviour
     [Header("节奏响应部分")]
     public bool isRhyObj = false; //是否是可以响应节奏的物体
     public bool isRhyAct = false;
-    public int KorePaylaod; 
+    public int KorePayload; 
 
     private void Awake()
     {
@@ -120,7 +120,7 @@ public class BaseObj : MonoBehaviour
     protected void KillNotify(BaseObj _obj)
     {
 
-        Debug.Log(gameObject.name +" Killed by  " + _obj.gameObject.name);
+        // Debug.Log(gameObject.name +" Killed by  " + _obj.gameObject.name);
         // 通知击杀者
         _obj.KillNotif_Recive(this);
     }
@@ -128,7 +128,7 @@ public class BaseObj : MonoBehaviour
     protected void KillNotif_Recive(BaseObj _obj)
     {
         // 接受通知
-        Debug.Log(gameObject.name + " kill : " + _obj.gameObject.name);
+        //Debug.Log(gameObject.name + " kill : " + _obj.gameObject.name);
     }
 
     public virtual void ObjDeath()
@@ -180,7 +180,7 @@ public class BaseObj : MonoBehaviour
     {
         // 将Rhy操作打开，具体释放时机会在Update中进行
         isRhyAct = true;
-        KorePaylaod = num; 
+        KorePayload = num; 
     }
 
     public virtual void RhyAction()

@@ -2690,7 +2690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 100
+  maxHp: 1000
   nowHp: 0
   attack: 10
   speed: 3
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 10
+  maxHp: 1000
   nowHp: 0
   attack: 10
   speed: 5

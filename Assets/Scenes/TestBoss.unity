@@ -3912,8 +3912,8 @@ MonoBehaviour:
   Audio_hurt: {fileID: 1820776632}
   rotationAngle_Set: 7
   rotationChange: 5
-  MulSpeed: 5
-  bulletNum: 2
+  MulSpeed: 15
+  bulletNum: 10
   bulletWave: 1
   MulfirePoint: {fileID: 0}
   MulBullet: {fileID: 2168593394703369890, guid: 8305960cc896e5b4aad0fe8363c3a058, type: 3}

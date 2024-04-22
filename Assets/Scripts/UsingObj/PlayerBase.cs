@@ -32,7 +32,17 @@ public class PlayerBase : Chara
     [SerializeField] private float startDashTimer;
     public GameObject trailEffect; 
     public GameObject trailEffect_ex; 
-    public GameObject trailEffect_last; 
+    public GameObject trailEffect_last;
+
+    [Header("道具部分")]
+    public List<GameObject> dataItems = new List<GameObject>(); //读取时就释放
+    public List<GameObject> FireItems = new List<GameObject>();
+    public List<GameObject> AttackItems = new List<GameObject>();
+    public List<GameObject> DashOnItems = new List<GameObject>();
+    public List<GameObject> DashOffItems = new List<GameObject>();
+    public List<GameObject> HurtItems = new List<GameObject>();
+    public List<GameObject> RhyonItems = new List<GameObject>(); //状态开始时释放
+    public List<GameObject> RhyoffItems = new List<GameObject>();//状态结束时释放
 
     [Header("节奏区域")]
     public float nowBeatValue; // 目前压点的得分 ， 最高100
@@ -72,6 +82,8 @@ public class PlayerBase : Chara
 
         attackArea = transform.Find("AttackArea").gameObject; 
         attackAreaSC = attackArea.GetComponent<Player_AttackArea>();
+
+        UsingItemsInList(dataItems);
     }
 
     protected override void ObjStart()
@@ -169,8 +181,24 @@ public class PlayerBase : Chara
         FiexdDataUpdater();
     }
 
+    private void UsingItemsInList(List<GameObject> items)
+    {
+        if(items.Count== 0)
+        {
+            return; 
+        }
+
+        foreach(GameObject _item in items)
+        {
+            _item.GetComponent<RoughItem>().ItemFun();
+            
+        }
+    }
+
     private void DashOn()
     {
+        UsingItemsInList(DashOnItems);
+
         if (inRhy)
         {
             trailEffect_ex.SetActive(true);
@@ -195,6 +223,8 @@ public class PlayerBase : Chara
 
     private void DashOff()
     {
+
+        UsingItemsInList(DashOffItems);
         trailEffect_last.SetActive(false);
         isdash = false;
 
@@ -301,6 +331,8 @@ public class PlayerBase : Chara
 
     private void Fire()
     {
+        UsingItemsInList(FireItems);
+
         if (inRhy)
         {
             audio_attack.clip = attackClips[1];
@@ -323,6 +355,7 @@ public class PlayerBase : Chara
 
     private void Attack()
     {
+        UsingItemsInList(AttackItems);
         StopMove(); //攻击时不得移动
 
 
@@ -429,10 +462,11 @@ public class PlayerBase : Chara
                 }
                 else
                 {
-                    nowHp -= _damage;
-                    isNoHurt = true;
-                    StartCoroutine(noHurtToNomarl());
+                    UsingItemsInList(HurtItems);
 
+                    nowHp -= _damage;
+
+                    NoHurt();
                     // 受击后震动
                     CameraMgr.GetInstance().ShakeCamera(); 
                 }
@@ -443,6 +477,12 @@ public class PlayerBase : Chara
         }
 
 
+    }
+
+    public void NoHurt()
+    {
+        isNoHurt = true;
+        StartCoroutine(noHurtToNomarl());
     }
 
     IEnumerator noHurtToNomarl()

@@ -7,6 +7,7 @@ public class RoughItem : MonoBehaviour
     public string Itemname; //名字
     public string describe; //描述，暂不使用
     public int type; // 类别，插入到哪个部分
+    public Sprite itemImg; 
 
     public BaseObj Itemuser; 
     

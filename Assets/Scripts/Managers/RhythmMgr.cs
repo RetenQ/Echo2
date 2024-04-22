@@ -125,14 +125,18 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     private void DrumBeat(KoreographyEvent koreographyEvent)
     {
         // 到鼓点了干什么    
-        NotifyObjs();
-        PlayerRhyOn();
-
         // 测试payloads
         if (koreographyEvent.HasIntPayload())
         {
             int tmp = koreographyEvent.GetIntValue();
-            Debug.Log("ITS :|||" + tmp);
+            // Debug.Log("ITS :|||" + tmp);
+            NotifyObjs(tmp);
+            PlayerRhyOn();
+        }
+        else
+        {
+            NotifyObjs(0);
+            PlayerRhyOn();
         }
         //
     }
@@ -161,11 +165,19 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         Objs.Remove(obj);
     }
    
-    public void NotifyObjs()
+    public void NotifyObjs(int value)
     {
         foreach (BaseObj _obj in Objs)
         {
-            _obj.RhyActOn(); 
+            if(value != 0)
+            {
+                _obj.RhyActOn(value);
+
+            }
+            else
+            {
+                _obj.RhyActOn(0);
+            }
         }
     }
 
@@ -190,15 +202,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         // playerRhy = false;
         PlayerSc.PlayerRhyOff();
     }
-
-    /// <summary>
-    /// 通知所有的，由AI控制的，需要在节奏点上进行操作的Object进行响应
-    /// </summary>
-    public void SystemRhy()
-    {
-        NotifyObjs(); //通知
-    }
-
 
 
     /*

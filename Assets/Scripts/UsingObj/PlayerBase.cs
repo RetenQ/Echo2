@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBase : Chara
 {
@@ -19,6 +20,9 @@ public class PlayerBase : Chara
 
     [SerializeField] private int facing;
 
+    public float noHurtTime; //无敌时间
+    [SerializeField] public bool isNoHurt = false;
+
     [Header("冲刺数据")]
     public float dashCD = 2;
     public float dashMul;  // 此处是dash的加速倍数
@@ -28,7 +32,17 @@ public class PlayerBase : Chara
     [SerializeField] private float startDashTimer;
     public GameObject trailEffect; 
     public GameObject trailEffect_ex; 
-    public GameObject trailEffect_last; 
+    public GameObject trailEffect_last;
+
+    [Header("道具部分")]
+    public List<GameObject> dataItems = new List<GameObject>(); //读取时就释放
+    public List<GameObject> FireItems = new List<GameObject>();
+    public List<GameObject> AttackItems = new List<GameObject>();
+    public List<GameObject> DashOnItems = new List<GameObject>();
+    public List<GameObject> DashOffItems = new List<GameObject>();
+    public List<GameObject> HurtItems = new List<GameObject>();
+    public List<GameObject> RhyonItems = new List<GameObject>(); //状态开始时释放
+    public List<GameObject> RhyoffItems = new List<GameObject>();//状态结束时释放
 
     [Header("节奏区域")]
     public float nowBeatValue; // 目前压点的得分 ， 最高100
@@ -68,6 +82,8 @@ public class PlayerBase : Chara
 
         attackArea = transform.Find("AttackArea").gameObject; 
         attackAreaSC = attackArea.GetComponent<Player_AttackArea>();
+
+        UsingItemsInList(dataItems);
     }
 
     protected override void ObjStart()
@@ -165,8 +181,24 @@ public class PlayerBase : Chara
         FiexdDataUpdater();
     }
 
+    private void UsingItemsInList(List<GameObject> items)
+    {
+        if(items.Count== 0)
+        {
+            return; 
+        }
+
+        foreach(GameObject _item in items)
+        {
+            _item.GetComponent<RoughItem>().ItemFun();
+            
+        }
+    }
+
     private void DashOn()
     {
+        UsingItemsInList(DashOnItems);
+
         if (inRhy)
         {
             trailEffect_ex.SetActive(true);
@@ -191,6 +223,8 @@ public class PlayerBase : Chara
 
     private void DashOff()
     {
+
+        UsingItemsInList(DashOffItems);
         trailEffect_last.SetActive(false);
         isdash = false;
 
@@ -297,6 +331,8 @@ public class PlayerBase : Chara
 
     private void Fire()
     {
+        UsingItemsInList(FireItems);
+
         if (inRhy)
         {
             audio_attack.clip = attackClips[1];
@@ -319,6 +355,7 @@ public class PlayerBase : Chara
 
     private void Attack()
     {
+        UsingItemsInList(AttackItems);
         StopMove(); //攻击时不得移动
 
 
@@ -410,6 +447,62 @@ public class PlayerBase : Chara
         //Debug.Log(res);
         animator.Play(res);
 
+    }
+
+
+    public override void Hurt(float _damage, BaseObj _hurtby)
+    {
+        if(!isNoHurt)
+        {
+            if (!isdash)
+            {
+                if (gameObject.CompareTag("Wall"))
+                {
+                    // 目前不做墙体伤害
+                }
+                else
+                {
+                    UsingItemsInList(HurtItems);
+
+                    nowHp -= _damage;
+
+                    NoHurt();
+                    // 受击后震动
+                    CameraMgr.GetInstance().ShakeCamera(); 
+                }
+
+                _hurtby.UpdateLastAttack(this);
+                lastHurtby = _hurtby;
+            }
+        }
+
+
+    }
+
+    public void NoHurt()
+    {
+        isNoHurt = true;
+        StartCoroutine(noHurtToNomarl());
+    }
+
+    IEnumerator noHurtToNomarl()
+    {
+        yield return new WaitForSeconds(noHurtTime);
+        isNoHurt = false; 
+
+    }
+
+    public override void ObjDeath()
+    {
+        base.ObjDeath();
+        ReloadScene();
+    }
+
+    // ! 测试用，重启游戏
+    public void ReloadScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
 }

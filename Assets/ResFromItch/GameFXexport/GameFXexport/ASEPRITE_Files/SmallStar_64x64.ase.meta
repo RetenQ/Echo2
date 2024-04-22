@@ -1,0 +1,1817 @@
+fileFormatVersion: 2
+guid: e30cb0bddd135ee47911078e0ad4fa61
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: SmallStar_64x64_Frame_0
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 133
+      height: 133
+    spriteID: cbe644b214cfc3b4bae1a2787c1fb77c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 0}
+  - name: SmallStar_64x64_Frame_1
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 145
+      width: 133
+      height: 133
+    spriteID: c42ae608c031e974c9563d1562634212
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 141}
+  - name: SmallStar_64x64_Frame_2
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 286
+      width: 133
+      height: 133
+    spriteID: ff0718a1a78d951478075d2d72a53707
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 282}
+  - name: SmallStar_64x64_Frame_3
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 427
+      width: 133
+      height: 133
+    spriteID: 4df2332be68df46438c6ea19e3eaeff1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 423}
+  - name: SmallStar_64x64_Frame_4
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 5c98f960fa540884db96ba2d937ae785
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 564}
+  - name: SmallStar_64x64_Frame_5
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 1c831a1b6f2cc2347ad06aecbca642a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 705}
+  - name: SmallStar_64x64_Frame_6
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 850
+      width: 133
+      height: 133
+    spriteID: 28fbdf929028f33419e8e8e890f88ada
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 846}
+  - name: SmallStar_64x64_Frame_7
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 991
+      width: 133
+      height: 133
+    spriteID: 4a9265bfc8a56084cb71d7b26ed86508
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 987}
+  - name: SmallStar_64x64_Frame_8
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1132
+      width: 133
+      height: 133
+    spriteID: 4f99e68baaf493a41950a6e87150cc81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1128}
+  - name: SmallStar_64x64_Frame_9
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1273
+      width: 133
+      height: 133
+    spriteID: 84a7df22651d9874286c6083a518b12d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1269}
+  - name: SmallStar_64x64_Frame_10
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1414
+      width: 133
+      height: 133
+    spriteID: 5156a859497b66741950c258b801e4b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1410}
+  - name: SmallStar_64x64_Frame_11
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1555
+      width: 133
+      height: 133
+    spriteID: 29ef836d543b3a0458c9915864c11546
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1551}
+  - name: SmallStar_64x64_Frame_12
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1696
+      width: 133
+      height: 133
+    spriteID: 8d90ac1423620ff45ab9d3d0d5f4c119
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1692}
+  - name: SmallStar_64x64_Frame_13
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1837
+      width: 133
+      height: 133
+    spriteID: 6acfbc469e01b744d81a0037d97a75cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 1833}
+  - name: SmallStar_64x64_Frame_14
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 4
+      width: 133
+      height: 133
+    spriteID: d7b1b59ce194fd7468653aec6a042f43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 0}
+  - name: SmallStar_64x64_Frame_15
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 145
+      width: 133
+      height: 133
+    spriteID: 09572438c4af51e4996559fee0133cb8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 141}
+  - name: SmallStar_64x64_Frame_16
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 286
+      width: 133
+      height: 133
+    spriteID: db6a6dd6936239d459f372fa46fbc38e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 282}
+  - name: SmallStar_64x64_Frame_17
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 427
+      width: 133
+      height: 133
+    spriteID: 8eba20becb26cc94fa19b531b3856e9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 423}
+  - name: SmallStar_64x64_Frame_18
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 4031dc8fcb524044aa6a4649ce76fbba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 564}
+  - name: SmallStar_64x64_Frame_19
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 07ad660b2823b4045807cb0d1e173430
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 705}
+  - name: SmallStar_64x64_Frame_20
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 850
+      width: 133
+      height: 133
+    spriteID: 92c1f43c81c1aca44862e0c1a45e2a8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 846}
+  - name: SmallStar_64x64_Frame_21
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 991
+      width: 133
+      height: 133
+    spriteID: 6b30917310879d7488438aab97287604
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 987}
+  - name: SmallStar_64x64_Frame_22
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1132
+      width: 133
+      height: 133
+    spriteID: 5be0141109a2fd048b04fd1713087b5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1128}
+  - name: SmallStar_64x64_Frame_23
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1273
+      width: 133
+      height: 133
+    spriteID: 10172c28a65c96946b1f81e2a1a8d674
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1269}
+  - name: SmallStar_64x64_Frame_24
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1414
+      width: 133
+      height: 133
+    spriteID: 72c63d0defe0c5342b6a8b1fa0e231c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1410}
+  - name: SmallStar_64x64_Frame_25
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1555
+      width: 133
+      height: 133
+    spriteID: b3e71d0e316953643ad8b7837f1d6fbb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1551}
+  - name: SmallStar_64x64_Frame_26
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1696
+      width: 133
+      height: 133
+    spriteID: 5e8da1ad7cd9cf841b113279089c0a2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1692}
+  - name: SmallStar_64x64_Frame_27
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 1837
+      width: 133
+      height: 133
+    spriteID: 11e70069def204b45a2c582ff12affd8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 1833}
+  - name: SmallStar_64x64_Frame_28
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 4
+      width: 133
+      height: 133
+    spriteID: b895498bc5578794d937ec02629d9ba2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 0}
+  - name: SmallStar_64x64_Frame_29
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 145
+      width: 133
+      height: 133
+    spriteID: b1b551574892452458aa39ea4f4b0e0f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 141}
+  - name: SmallStar_64x64_Frame_30
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 571c7424620e95e4193b5075fa255cbe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 282}
+  - name: SmallStar_64x64_Frame_31
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 427
+      width: 133
+      height: 133
+    spriteID: a1fa9a48d0d84de49bd7e582bc38ead1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 423}
+  - name: SmallStar_64x64_Frame_32
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 568
+      width: 133
+      height: 133
+    spriteID: b5f7e2fa56c4f7045beb089706cbb1d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 564}
+  - name: SmallStar_64x64_Frame_33
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 80106f595c27e154498bfd590e4b0e79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 705}
+  - name: SmallStar_64x64_Frame_34
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 850
+      width: 133
+      height: 133
+    spriteID: 72487001426eb9849aa056ed2ec1d814
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 846}
+  - name: SmallStar_64x64_Frame_35
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 991
+      width: 133
+      height: 133
+    spriteID: d2e48768a671e2b49bc3d4da6ba597da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 987}
+  - name: SmallStar_64x64_Frame_36
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1132
+      width: 133
+      height: 133
+    spriteID: d06ea15c5be53594b96c68c86f745c93
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1128}
+  - name: SmallStar_64x64_Frame_37
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1273
+      width: 133
+      height: 133
+    spriteID: 3ac65e3748f8558478b6124a41534903
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1269}
+  - name: SmallStar_64x64_Frame_38
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1414
+      width: 133
+      height: 133
+    spriteID: 28774aaa6fd34ac499d8294cdfd2bd5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1410}
+  - name: SmallStar_64x64_Frame_39
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1555
+      width: 133
+      height: 133
+    spriteID: 0750768b37731214eb5bf492530f8493
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1551}
+  - name: SmallStar_64x64_Frame_40
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1696
+      width: 133
+      height: 133
+    spriteID: 84fd602446bf7e442a9219cfb869b410
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1692}
+  - name: SmallStar_64x64_Frame_41
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1837
+      width: 133
+      height: 133
+    spriteID: 46c1c549e06f1b64e81fc9c51c5df56e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 1833}
+  - name: SmallStar_64x64_Frame_42
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 4
+      width: 133
+      height: 133
+    spriteID: d3ef163801c299d40b09a37041095aa1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 0}
+  - name: SmallStar_64x64_Frame_43
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 145
+      width: 133
+      height: 133
+    spriteID: 38c49430c36d69041bbf6416a2bc253e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 141}
+  - name: SmallStar_64x64_Frame_44
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 286
+      width: 133
+      height: 133
+    spriteID: dac041c8aa0e8614aa768f20403399be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 282}
+  - name: SmallStar_64x64_Frame_45
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 427
+      width: 133
+      height: 133
+    spriteID: ea5c24ba6937c1843985688489ac1cfd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 423}
+  - name: SmallStar_64x64_Frame_46
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 568
+      width: 133
+      height: 133
+    spriteID: 921af6b85a7e63442a0b30fdc491d861
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 564}
+  - name: SmallStar_64x64_Frame_47
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 709
+      width: 133
+      height: 133
+    spriteID: 3499e986d0d97b040b888f829cfa12cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 705}
+  - name: SmallStar_64x64_Frame_48
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 850
+      width: 133
+      height: 133
+    spriteID: 11e3d90206183cd43a68971b9f2a39eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 846}
+  - name: SmallStar_64x64_Frame_49
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 991
+      width: 133
+      height: 133
+    spriteID: 372f828d6f5d38441ad9f672b08d8132
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 987}
+  - name: SmallStar_64x64_Frame_50
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1132
+      width: 133
+      height: 133
+    spriteID: 98ef5e02c980c1446a007fa2646e047f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1128}
+  - name: SmallStar_64x64_Frame_51
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1273
+      width: 133
+      height: 133
+    spriteID: 7e452e484c1f19e40905620530085a10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1269}
+  - name: SmallStar_64x64_Frame_52
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1414
+      width: 133
+      height: 133
+    spriteID: 17f9e34c482456f4899ca91294220af9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1410}
+  - name: SmallStar_64x64_Frame_53
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1555
+      width: 133
+      height: 133
+    spriteID: b9d65b84110a76941b13a88eb5bbe58d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1551}
+  - name: SmallStar_64x64_Frame_54
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1696
+      width: 133
+      height: 133
+    spriteID: ce18cd478635dd641a5c3913f4db16fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1692}
+  - name: SmallStar_64x64_Frame_55
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1837
+      width: 133
+      height: 133
+    spriteID: 6ad5db8d5a1e5dc4fb01e57d7032e9d0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 1833}
+  - name: SmallStar_64x64_Frame_56
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 4
+      width: 133
+      height: 133
+    spriteID: 18f5aa19c6cdd7247aec65196a3d51b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 565, y: 0}
+  - name: SmallStar_64x64_Frame_57
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 145
+      width: 133
+      height: 133
+    spriteID: 12be82b5b69a56648ba7e15fa4e86533
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 565, y: 141}
+  - name: SmallStar_64x64_Frame_58
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 286
+      width: 133
+      height: 133
+    spriteID: 0e09e2459fad9404bbb958b12116e0f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 565, y: 282}
+  - name: SmallStar_64x64_Frame_59
+    originalName: 
+    pivot: {x: 0.49624062, y: 0.2556391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 568
+      y: 427
+      width: 133
+      height: 133
+    spriteID: d2b796144924b044eaa21f52a29d9237
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 565, y: 423}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1445882138
+    name: SmallStar_64x64
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: SmallStar_64x64_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: cbe644b214cfc3b4bae1a2787c1fb77c
+    - name: SmallStar_64x64_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: c42ae608c031e974c9563d1562634212
+    - name: SmallStar_64x64_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: ff0718a1a78d951478075d2d72a53707
+    - name: SmallStar_64x64_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 4df2332be68df46438c6ea19e3eaeff1
+    - name: SmallStar_64x64_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 5c98f960fa540884db96ba2d937ae785
+    - name: SmallStar_64x64_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 1c831a1b6f2cc2347ad06aecbca642a1
+    - name: SmallStar_64x64_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 28fbdf929028f33419e8e8e890f88ada
+    - name: SmallStar_64x64_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 4a9265bfc8a56084cb71d7b26ed86508
+    - name: SmallStar_64x64_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 4f99e68baaf493a41950a6e87150cc81
+    - name: SmallStar_64x64_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 84a7df22651d9874286c6083a518b12d
+    - name: SmallStar_64x64_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 5156a859497b66741950c258b801e4b9
+    - name: SmallStar_64x64_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 29ef836d543b3a0458c9915864c11546
+    - name: SmallStar_64x64_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 8d90ac1423620ff45ab9d3d0d5f4c119
+    - name: SmallStar_64x64_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 6acfbc469e01b744d81a0037d97a75cc
+    - name: SmallStar_64x64_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: d7b1b59ce194fd7468653aec6a042f43
+    - name: SmallStar_64x64_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 09572438c4af51e4996559fee0133cb8
+    - name: SmallStar_64x64_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: db6a6dd6936239d459f372fa46fbc38e
+    - name: SmallStar_64x64_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 8eba20becb26cc94fa19b531b3856e9a
+    - name: SmallStar_64x64_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 4031dc8fcb524044aa6a4649ce76fbba
+    - name: SmallStar_64x64_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 07ad660b2823b4045807cb0d1e173430
+    - name: SmallStar_64x64_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 92c1f43c81c1aca44862e0c1a45e2a8a
+    - name: SmallStar_64x64_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 6b30917310879d7488438aab97287604
+    - name: SmallStar_64x64_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 5be0141109a2fd048b04fd1713087b5a
+    - name: SmallStar_64x64_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 10172c28a65c96946b1f81e2a1a8d674
+    - name: SmallStar_64x64_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 72c63d0defe0c5342b6a8b1fa0e231c8
+    - name: SmallStar_64x64_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: b3e71d0e316953643ad8b7837f1d6fbb
+    - name: SmallStar_64x64_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 5e8da1ad7cd9cf841b113279089c0a2a
+    - name: SmallStar_64x64_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 11e70069def204b45a2c582ff12affd8
+    - name: SmallStar_64x64_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: b895498bc5578794d937ec02629d9ba2
+    - name: SmallStar_64x64_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: b1b551574892452458aa39ea4f4b0e0f
+    - name: SmallStar_64x64_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 571c7424620e95e4193b5075fa255cbe
+    - name: SmallStar_64x64_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: a1fa9a48d0d84de49bd7e582bc38ead1
+    - name: SmallStar_64x64_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: b5f7e2fa56c4f7045beb089706cbb1d8
+    - name: SmallStar_64x64_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 80106f595c27e154498bfd590e4b0e79
+    - name: SmallStar_64x64_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 72487001426eb9849aa056ed2ec1d814
+    - name: SmallStar_64x64_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: d2e48768a671e2b49bc3d4da6ba597da
+    - name: SmallStar_64x64_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: d06ea15c5be53594b96c68c86f745c93
+    - name: SmallStar_64x64_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 3ac65e3748f8558478b6124a41534903
+    - name: SmallStar_64x64_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 28774aaa6fd34ac499d8294cdfd2bd5d
+    - name: SmallStar_64x64_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 0750768b37731214eb5bf492530f8493
+    - name: SmallStar_64x64_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 84fd602446bf7e442a9219cfb869b410
+    - name: SmallStar_64x64_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 46c1c549e06f1b64e81fc9c51c5df56e
+    - name: SmallStar_64x64_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: d3ef163801c299d40b09a37041095aa1
+    - name: SmallStar_64x64_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 38c49430c36d69041bbf6416a2bc253e
+    - name: SmallStar_64x64_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: dac041c8aa0e8614aa768f20403399be
+    - name: SmallStar_64x64_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: ea5c24ba6937c1843985688489ac1cfd
+    - name: SmallStar_64x64_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 921af6b85a7e63442a0b30fdc491d861
+    - name: SmallStar_64x64_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 3499e986d0d97b040b888f829cfa12cf
+    - name: SmallStar_64x64_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 11e3d90206183cd43a68971b9f2a39eb
+    - name: SmallStar_64x64_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 372f828d6f5d38441ad9f672b08d8132
+    - name: SmallStar_64x64_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 98ef5e02c980c1446a007fa2646e047f
+    - name: SmallStar_64x64_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 7e452e484c1f19e40905620530085a10
+    - name: SmallStar_64x64_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 17f9e34c482456f4899ca91294220af9
+    - name: SmallStar_64x64_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: b9d65b84110a76941b13a88eb5bbe58d
+    - name: SmallStar_64x64_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: ce18cd478635dd641a5c3913f4db16fb
+    - name: SmallStar_64x64_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 6ad5db8d5a1e5dc4fb01e57d7032e9d0
+    - name: SmallStar_64x64_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 18f5aa19c6cdd7247aec65196a3d51b0
+    - name: SmallStar_64x64_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 12be82b5b69a56648ba7e15fa4e86533
+    - name: SmallStar_64x64_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: 0e09e2459fad9404bbb958b12116e0f7
+    - name: SmallStar_64x64_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: -37
+        y: -38
+        width: 136
+        height: 137
+      spriteId: d2b796144924b044eaa21f52a29d9237
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

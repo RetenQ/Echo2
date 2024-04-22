@@ -7907,6 +7907,158 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &515300895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515300896}
+  - component: {fileID: 515300897}
+  - component: {fileID: 515300898}
+  m_Layer: 0
+  m_Name: TestLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515300896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515300895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.97145486, y: 0.9776541, z: -0.003078864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &515300897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515300895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3193436f823bdcc47a08210ef1eec96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 1526518990}
+  targetTag: 
+  damage: 0
+  LaserUser: {fileID: 0}
+  IniColor: {r: 0.9339623, g: 0, b: 0.8322052, a: 0}
+  IniWidth: 0.1
+  ActColor: {r: 1, g: 0, b: 0.023192883, a: 0}
+  ActWidth: 0.3
+--- !u!120 &515300898
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515300895}
+  m_Enabled: 1
+  m_CastShadows: 2
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1741582911
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0027160645
+        value: 0.05747223
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,6 +9038,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &664425402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664425403}
+  m_Layer: 9
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664425403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664425402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.66, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1400438054}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693232899
 GameObject:
   m_ObjectHideFlags: 0
@@ -11875,6 +12058,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321681232}
+  - {fileID: 664425403}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11912,7 +12096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 30
+  maxHp: 3000
   nowHp: 0
   attack: 0
   speed: 0
@@ -11924,6 +12108,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 9999
   activeArrange: 0
@@ -11935,6 +12122,22 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1400438058}
   Audio_hurt: {fileID: 1400438057}
+  rotationAngle_Set: 5
+  rotationChange: 20
+  bulletNum: 5
+  bulletWave: 1
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 36
+  FullBulletWave: 1
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 10
+  RocketBulletWave: 2
+  rocketBulletLifeTime: 10
+  rocketAngle: 100
+  rocketLerp: 0.5
   radius: 0
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -12652,6 +12855,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 3.7
@@ -12663,6 +12869,22 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1502641319}
   Audio_hurt: {fileID: 1502641318}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 3.3
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -13321,6 +13543,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 0
@@ -13332,11 +13557,25 @@ MonoBehaviour:
   hpBar: {fileID: 1513718310}
   Audio_attack: {fileID: 1601916064}
   Audio_hurt: {fileID: 1601916063}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 5.72
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  bullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 10
 --- !u!82 &1601916063
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14100,6 +14339,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 10
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 0
@@ -14111,11 +14353,25 @@ MonoBehaviour:
   hpBar: {fileID: 588427613}
   Audio_attack: {fileID: 1714604157}
   Audio_hurt: {fileID: 1714604156}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 5.72
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  bullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
-  bulletSpeed: 10
 --- !u!50 &1714604159
 Rigidbody2D:
   serializedVersion: 4
@@ -14800,6 +15056,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 2
   activeArrange: 3.7
@@ -14811,6 +15070,22 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 1864367371}
   Audio_hurt: {fileID: 1864367370}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 3.3
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -15177,6 +15452,9 @@ MonoBehaviour:
   isActive: 0
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  firePoint: {fileID: 0}
+  Enemybullet: {fileID: 0}
+  bulletSpeed: 0
   target: {fileID: 0}
   AttackCD: 0
   activeArrange: 0
@@ -15188,6 +15466,22 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   Audio_attack: {fileID: 0}
   Audio_hurt: {fileID: 0}
+  rotationAngle_Set: 0
+  rotationChange: 0
+  bulletNum: 0
+  bulletWave: 0
+  MulfirePoint: {fileID: 0}
+  MulBullet: {fileID: 0}
+  FullfirePoint: {fileID: 0}
+  FullBullet: {fileID: 0}
+  FullBulletNum: 0
+  FullBulletWave: 0
+  RocketBullet: {fileID: 0}
+  RocketBulletNum: 0
+  RocketBulletWave: 0
+  rocketBulletLifeTime: 0
+  rocketAngle: 0
+  rocketLerp: 0
   radius: 0
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

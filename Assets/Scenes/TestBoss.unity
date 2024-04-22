@@ -2552,6 +2552,14 @@ MonoBehaviour:
   trailEffect: {fileID: 1828134511}
   trailEffect_ex: {fileID: 1531978990}
   trailEffect_last: {fileID: 0}
+  dataItems: []
+  FireItems: []
+  AttackItems: []
+  DashOnItems: []
+  DashOffItems: []
+  HurtItems: []
+  RhyonItems: []
+  RhyoffItems: []
   nowBeatValue: 0
   bullet: {fileID: 6666229230416310642, guid: 39efda5b345abd84a922a2c117b0fc5f, type: 3}
   bullet_ex: {fileID: 5785128562410195200, guid: b58b1e060aa452f478838d54922a5739, type: 3}
@@ -2760,6 +2768,7 @@ GameObject:
   - component: {fileID: 1503570833}
   - component: {fileID: 1503570839}
   - component: {fileID: 1503570840}
+  - component: {fileID: 1503570841}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2980,6 +2989,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc9a312702dd6d49b7a2bd198605539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1503570841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503570832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df61303b57353684bbd47ce38e74ee51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1531978990
@@ -3360,7 +3381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1820776632
 AudioSource:
   m_ObjectHideFlags: 0

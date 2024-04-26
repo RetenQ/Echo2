@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class PlayerBase : Chara
 {
@@ -36,18 +37,18 @@ public class PlayerBase : Chara
 
     [Header("道具部分")]
     public List<GameObject> dataItems = new List<GameObject>(); //读取时就释放
-    public List<GameObject> FireItems = new List<GameObject>();
-    public List<GameObject> AttackItems = new List<GameObject>();
-    public List<GameObject> DashOnItems = new List<GameObject>();
-    public List<GameObject> DashOffItems = new List<GameObject>();
-    public List<GameObject> HurtItems = new List<GameObject>();
+    public List<GameObject> FireItems = new List<GameObject>(); // type1
+    public List<GameObject> AttackItems = new List<GameObject>(); // type2
+    public List<GameObject> DashOnItems = new List<GameObject>();// type3
+    public List<GameObject> DashOffItems = new List<GameObject>();// type4
+    public List<GameObject> HurtItems = new List<GameObject>();// type5
     public List<GameObject> RhyonItems = new List<GameObject>(); //状态开始时释放
     public List<GameObject> RhyoffItems = new List<GameObject>();//状态结束时释放
 
     [Header("节奏区域")]
     public float nowBeatValue; // 目前压点的得分 ， 最高100
 
-    // public float nowRhyPoint; //得分
+    public float levelScore; //每层的得分
 
     [Header("子弹区")]
     public GameObject bullet;
@@ -88,8 +89,9 @@ public class PlayerBase : Chara
 
     protected override void ObjStart()
     {
-/*        sr.color = Color.blue;
-*/
+        GameManager.GetInstance().getNewPlayer(gameObject); // 注册
+        ReloadtheItems(GameManager.GetInstance().rogueItems_chosen); //读取MGR的内容
+
     }
 
     protected override void ObjUpdate()
@@ -190,7 +192,7 @@ public class PlayerBase : Chara
 
         foreach(GameObject _item in items)
         {
-            _item.GetComponent<RoughItem>().ItemFun();
+            _item.GetComponent<RogueItem>().ItemFun();
             
         }
     }
@@ -503,6 +505,28 @@ public class PlayerBase : Chara
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    /// <summary>
+    /// 通过List,重新载入
+    /// </summary>
+    /// <param name="choseItemList"></param>
+    public void ReloadtheItems(List<GameObject> choseItemList)
+    {
+        foreach (GameObject _item in choseItemList)
+        {
+            RogueItem rogueItem = _item.GetComponent<RogueItem>();
+            int tmp = rogueItem.type;
+
+            if (tmp == 1)      FireItems.Add(_item);
+            else if (tmp == 2) AttackItems.Add(_item);
+            else if (tmp == 3) DashOnItems.Add(_item);
+            else if (tmp == 4) DashOffItems.Add(_item);
+            else if (tmp == 5) HurtItems.Add(_item);
+            else Debug.Log("ADD ITEM FALSE!!!");
+        }
+        // 首先加入玩家的列表
+
     }
 
 }

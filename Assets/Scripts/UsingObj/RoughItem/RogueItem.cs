@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoughItem : MonoBehaviour
+public class RogueItem : MonoBehaviour
 {
     public string Itemname; //名字
     public string describe; //描述，暂不使用

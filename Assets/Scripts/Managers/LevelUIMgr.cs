@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 
 public class LevelUIMgr : MonoBehaviour
 {
+    [Header("结算UI")]
+    public TextMeshProUGUI levelScore; 
+
     [Header("选择")]
-    public GameObject RogueItem;
+    public GameObject RogueItem; // 存道具
 
     public Button RIButton1;
     public Button RIButton2;
@@ -17,6 +21,10 @@ public class LevelUIMgr : MonoBehaviour
     public TextMeshProUGUI RIText1;
     public TextMeshProUGUI RIText2;
     public TextMeshProUGUI RIText3;
+
+    public GameObject Item1;
+    public GameObject Item2;
+    public GameObject Item3;
 
     [Header("音频")]
     public float fadeInTime = 2.0f; // 渐入时间
@@ -36,6 +44,14 @@ public class LevelUIMgr : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.U)) setItem(); 
 
     }
+
+    public void setTheScoreUI()
+    {
+        GameManager.GetInstance().UpdatePlayerScore();
+        float tmpScore = GameManager.GetInstance().theScore;
+        levelScore.text = tmpScore.ToString();
+    }
+
     public void UpdatetheRoughItemUI()
     {
         RogueItem = GameObject.Find("TheRogueItem");
@@ -46,42 +62,51 @@ public class LevelUIMgr : MonoBehaviour
         RIText1 = RIButton1.gameObject.transform.Find("ItemDescribe").gameObject.GetComponent<TextMeshProUGUI>();
         RIText2 = RIButton2.gameObject.transform.Find("ItemDescribe").gameObject.GetComponent<TextMeshProUGUI>();
         RIText3 = RIButton3.gameObject.transform.Find("ItemDescribe").gameObject.GetComponent<TextMeshProUGUI>();
+
+        levelScore = RogueItem.transform.Find("backGround").Find("Right").Find("YourScore").GetComponent<TextMeshProUGUI>();
     }
 
     public void RIButton1Fun()
     {
-        Debug.Log("1");
+        GameManager.GetInstance().addItem(Item1);
+        GameManager .GetInstance().LoadNextScene();
     }
 
     public void RIButton2Fun()
     {
-        Debug.Log("2");
+        GameManager.GetInstance().addItem(Item2);
+        GameManager.GetInstance().LoadNextScene();
 
     }
 
     public void RIButton3Fun()
     {
-        Debug.Log("3");
-
+        GameManager.GetInstance().addItem(Item3);
+        GameManager.GetInstance().LoadNextScene();
     }
 
     public void setItem()
     {
-        List<GameObject> rogueItems = GameManager.GetInstance().rogueItems; // 拿到MGR存的，还没有用的
+        List<GameObject> rogueItems = GameManager.GetInstance().rogueItems_canChose; // 拿到MGR存的，还没有用的
 
 
         GameManager.Shuffle<GameObject>(rogueItems); // 洗牌
+
+        Item1 = rogueItems[0];
+        Item2 = rogueItems[1];
+        Item3 = rogueItems[2];
+
         // 加入
-        addItemToUI(rogueItems[0], RIButton1, RIText1);
-        addItemToUI(rogueItems[1], RIButton2, RIText2);
-        addItemToUI(rogueItems[2], RIButton3, RIText3);
+        addItemToUI(Item1, RIButton1, RIText1);
+        addItemToUI(Item2, RIButton2, RIText2);
+        addItemToUI(Item3, RIButton3, RIText3);
 
     }
 
     public void addItemToUI(GameObject itemObj, Button button, TextMeshProUGUI tmp)
     {
-        button.image.sprite = itemObj.GetComponent<RoughItem>().itemImg;
-        tmp.text = itemObj.GetComponent<RoughItem>().describe;
+        button.image.sprite = itemObj.GetComponent<RogueItem>().itemImg;
+        tmp.text = itemObj.GetComponent<RogueItem>().describe;
 
     }
     IEnumerator FadeIn()

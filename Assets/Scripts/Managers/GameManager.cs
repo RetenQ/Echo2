@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,9 +38,14 @@ public class GameManager : SingletonMono<GameManager>
     [Header("safeLevel的地图池")]
     public List<string> saveLevel_list = new List<string>();
 
+    [Header("长期存档内容")]
+    public int gameTime; 
+
     protected override void Awake()
     {
         base.Awake();
+
+        LoadLongSave();
 
         DontDestroyOnLoad(this);
     }
@@ -54,6 +60,27 @@ public class GameManager : SingletonMono<GameManager>
     // Update is called once per frame
     void Update()
     {
+
+        // 测试用。由于还没有目前的流程还不足以完全使用SaveSystem (没有好的时机使用)
+        // 我们这里测试以验证其是可行的
+        if (Input.GetKeyDown(KeyCode.Keypad0)){
+            ShortSaveByJson();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            LoadShortSave();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            LongsaveByJson();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            LoadLongSave();
+        }
     }
 
     public void GenerateMap()
@@ -162,4 +189,139 @@ public class GameManager : SingletonMono<GameManager>
         SceneManager.LoadScene(_name); //
     }
 
+
+    // 存档系统相关
+
+    // ShortSave和LongSave的样式在该部分之后
+
+    // Shortave
+    public ShortSave CreateShortSave()
+    {
+        // 创建一个save对象
+        ShortSave save = new ShortSave();
+
+        return save;
+    }
+
+    public void ShortSaveByJson()
+    {
+        //一样的，我们使用CreateSaveGameObject()方法，得到要保存的Save
+        ShortSave save = CreateShortSave();
+
+        save.theScore_sum = theScore_sum;
+        save.rogueItems_canChose = rogueItems_canChose;
+        save.rogueItems_chosen = rogueItems_chosen;
+        save.stage = stage;
+        save.scene_index = scene_index;
+        save.mapseed = mapseed;
+
+    //! Json的保存方式是JsonString，因此我们需要创建一个对应的String
+    string JsonString = JsonUtility.ToJson(save);
+        //利用 JsonUtility.ToJson()得到我们所需要的东西，【对象save】->【JSON字符串JsonString】
+
+        //随后实例化一个流写入类：StreamWriter类
+        StreamWriter sw = new StreamWriter(Application.dataPath + "ShortSave_DATA.txt");
+        //StreamWriter类允许将字符和字符串写入文件，参数是写入数据的地方的“完整文件路径”
+        sw.Write(JsonString);//写入
+        sw.Close();
+
+        Debug.Log("FINSH: " + Application.dataPath); 
+    }
+
+    public void LoadShortSave()
+    {
+        // 检测文件存在
+        if (File.Exists(Application.dataPath + "ShortSave_DATA.txt"))
+        {
+            //读取文件
+            StreamReader sr = new StreamReader(Application.dataPath + "ShortSave_DATA.txt");
+
+
+            //将文件转换为string
+            string JsonString = sr.ReadToEnd();            
+            //ReadToEnd()读取的是来自流的当前位置到结尾的所有字符(从整个流或流的当前位置，读取至结尾)
+            sr.Close();
+
+            // 得到save文件
+            ShortSave save = JsonUtility.FromJson<ShortSave>(JsonString);
+
+            //按需求还原
+
+            theScore_sum = save.theScore_sum;
+            rogueItems_canChose = save.rogueItems_canChose;
+            rogueItems_chosen = save.rogueItems_chosen;
+            stage = save.stage;
+            scene_index = save.scene_index;
+            mapseed = save.mapseed;
+        }
+        else
+        {
+            // 不存在的话。由于这个是短期存档。所以可以先不作处理
+            Debug.Log("暂无ShortSave");
+        }
+    }
+
+    // LongSave
+
+    public LongSave CreateLongSave()
+    {
+        LongSave save = new LongSave();
+
+        return save;
+    }
+
+    public void LongsaveByJson()
+    {
+        //一样的，我们使用CreateSaveGameObject()方法，得到要保存的Save
+        LongSave save = CreateLongSave();
+
+        save.gameTime= gameTime+1; //现在是保存的时候都默认加一次
+
+        //! Json的保存方式是JsonString，因此我们需要创建一个对应的String
+        string JsonString = JsonUtility.ToJson(save);
+        //利用 JsonUtility.ToJson()得到我们所需要的东西，【对象save】->【JSON字符串JsonString】
+
+        //随后实例化一个流写入类：StreamWriter类
+        StreamWriter sw = new StreamWriter(Application.dataPath + "LongSave_DATA.txt");
+        //StreamWriter类允许将字符和字符串写入文件，参数是写入数据的地方的“完整文件路径”
+        sw.Write(JsonString);//写入
+        sw.Close();
+    }
+
+    public void LoadLongSave()
+    {
+        // 检测文件存在
+        if (File.Exists(Application.dataPath + "LongSave_DATA.txt"))
+        {
+            //读取文件
+            StreamReader sr = new StreamReader(Application.dataPath + "LongSave_DATA.txt");
+
+
+            //将文件转换为string
+            string JsonString = sr.ReadToEnd();
+            //ReadToEnd()读取的是来自流的当前位置到结尾的所有字符(从整个流或流的当前位置，读取至结尾)
+            sr.Close();
+
+            // 得到save文件
+            LongSave save = JsonUtility.FromJson<LongSave>(JsonString);
+
+            //按需求还原
+            gameTime = save.gameTime;
+        }
+        else
+        {
+            // 不存在的话。这个是LongSave。则意味着需要作用下初始化处理
+            gameTime = 1; 
+        }
+    }
+
+}
+
+
+[System.Serializable]
+public class LongSave
+{
+    //仅做演示，目前longSave还没有很充分的保存内容。这里只存储了游戏次数作为展示使用
+
+    public int gameTime; 
 }

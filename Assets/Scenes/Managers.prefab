@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 175147305061549481}
   - component: {fileID: 175147305061549487}
   - component: {fileID: 175147305061549472}
-  - component: {fileID: 175147305061549473}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -180,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add32a04784fbb14ba14e244ee07bdab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRealWorking: 1
   realPlayer: {fileID: 0}
   realAudio: {fileID: 0}
   isActive: 0
@@ -195,7 +195,6 @@ MonoBehaviour:
   PlayerSc: {fileID: 0}
   Objs: []
   audioSource: {fileID: 0}
-  RhyBar: {fileID: 0}
 --- !u!82 &175147305061549484
 AudioSource:
   m_ObjectHideFlags: 0
@@ -306,9 +305,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
+  MainUI_Playing: {fileID: 0}
   hpBar: {fileID: 0}
-  beatBar: {fileID: 0}
+  RhythmBar: {fileID: 0}
   DashCD: {fileID: 0}
+  RhyBar: {fileID: 0}
 --- !u!114 &175147305061549482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,28 +368,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc9a312702dd6d49b7a2bd198605539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &175147305061549473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175147305061549480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df61303b57353684bbd47ce38e74ee51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerSC: {fileID: 0}
-  theScore: 0
-  theScore_sum: 0
-  rogueItems_ALL: []
-  rogueItems_canChose: []
-  rogueItems_chosen: []
-  stage: 1
-  scene_index: 0
-  scene_list: []
-  mapseed: 
-  stageA_list: []
-  saveLevel_list: []

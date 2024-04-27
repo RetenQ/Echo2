@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +37,12 @@ public class GameManager : SingletonMono<GameManager>
     [Header("safeLevel的地图池")]
     public List<string> saveLevel_list = new List<string>();
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        DontDestroyOnLoad(this);
+    }
 
 
     // Start is called before the first frame update
@@ -151,6 +156,9 @@ public class GameManager : SingletonMono<GameManager>
         scene_index++; //更新下标
     }
 
-
+    public void LoadNextScene(string _name)
+    {
+        SceneManager.LoadScene(_name); //
+    }
 
 }

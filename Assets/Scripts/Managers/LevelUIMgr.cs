@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 
 public class LevelUIMgr : MonoBehaviour
@@ -30,6 +29,7 @@ public class LevelUIMgr : MonoBehaviour
     public float fadeInTime = 2.0f; // Ω•»Î ±º‰
     public AudioSource audioSource;
     private float startVolume;
+
 
 
     private void Start()
@@ -69,20 +69,25 @@ public class LevelUIMgr : MonoBehaviour
     public void RIButton1Fun()
     {
         GameManager.GetInstance().addItem(Item1);
-        GameManager .GetInstance().LoadNextScene();
+        // GameManager .GetInstance().LoadNextScene();
+        GameManager .GetInstance().LoadNextScene("Boss1");
     }
 
     public void RIButton2Fun()
     {
         GameManager.GetInstance().addItem(Item2);
-        GameManager.GetInstance().LoadNextScene();
+        // GameManager.GetInstance().LoadNextScene();
+        GameManager.GetInstance().LoadNextScene("Boss1");
+
 
     }
 
     public void RIButton3Fun()
     {
         GameManager.GetInstance().addItem(Item3);
-        GameManager.GetInstance().LoadNextScene();
+        // GameManager.GetInstance().LoadNextScene();
+        GameManager.GetInstance().LoadNextScene("Boss1");
+
     }
 
     public void setItem()

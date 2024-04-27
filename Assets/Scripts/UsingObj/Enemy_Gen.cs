@@ -18,15 +18,19 @@ public class Enemy_Gen : BaseObj
 
         if(gen_timer <=0)
         {
-            // 在此处进行生成
-            int tmp = Random.Range(0, enemyPool.Count);
-            GameObject _newEne = GameObject.Instantiate(enemyPool[tmp], transform.position, Quaternion.identity);
-            _newEne.GetComponent<Enemy>().setEnemyAlive(); //启动
-                                                           // 就在此处生成
+            if(gen_sum >= 0 )
+            {
+                // 在此处进行生成
+                int tmp = Random.Range(0, enemyPool.Count);
+                GameObject _newEne = GameObject.Instantiate(enemyPool[tmp], transform.position, Quaternion.identity);
+                _newEne.GetComponent<Enemy>().setEnemyAlive(); //启动
+                                                               // 就在此处生成
 
-            gen_sum--;
+                gen_sum--;
 
-            gen_timer = gen_timer_set; //恢复计数
+                gen_timer = gen_timer_set; //恢复计数
+            }
+
         }
         else
         {

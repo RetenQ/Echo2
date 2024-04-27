@@ -12,7 +12,6 @@ public class Enemy : Chara
     public NavMeshAgent2D Nav2dAgent;
 
     [Header("敌人参数")]
-    [SerializeField] private bool isActive; //敌人是否启动
     [SerializeField] protected GameObject Player;
     [SerializeField] protected PlayerBase PlayerSc;
     public GameObject firePoint; //射击位置
@@ -61,8 +60,8 @@ public class Enemy : Chara
     public float rocketAngle;
     public float rocketLerp;
 
-    [Header("辅助")]
-    private bool nothing; // 作为分隔的变量
+    [Header("死亡特效")]
+    public GameObject deathEx; 
 
 
 
@@ -115,11 +114,12 @@ public class Enemy : Chara
 
     protected override void ObjUpdate()
     {
-        if (isActive)
+        DataUpdater(); // 数据更新涉及UI，会一直更新
+
+
+        if (alive)
         {
             // 启动后开始执行
-
-            DataUpdater();
 
             FindPlayer();
 
@@ -140,16 +140,29 @@ public class Enemy : Chara
                 }
             }
         }
+        else
+        {
+            Nav2dAgent.speed = 0;
+        }
 
     }
 
     public void setEnemyAlive()
     {
-        this.isActive = true; 
+        this.alive = true; 
     }
     public void setEnemyNoAlive()
     {
-        this.isActive = false;
+        this.alive = false;
+    }
+
+    public override void ObjDeath()
+    {
+        base.ObjDeath();
+        // 敌人通用的死亡
+
+        GameObject _deathEx = GameObject.Instantiate(deathEx, transform.position, Quaternion.identity);
+        Destroy(gameObject); //销毁自己
     }
 
     private void DataUpdater()

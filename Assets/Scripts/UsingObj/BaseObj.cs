@@ -58,11 +58,9 @@ public class BaseObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("dwdawdawdawd + " + gameObject.name + isRhyObj);
 
         if (isRhyObj)
         {
-            Debug.Log("dwdaw + "+ gameObject.name);
             // 如果是在节奏系统中的物体，需要注册
             RhythmMgr.GetInstance().RegistertObj(this);
         }

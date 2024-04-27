@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -162,4 +163,116 @@ public class GameManager : SingletonMono<GameManager>
         SceneManager.LoadScene(_name); //
     }
 
+
+    // 存档系统相关
+
+    // ShortSave和LongSave的样式在该部分之后
+
+    // Shortave
+    public ShortSave CreateShortSave()
+    {
+        // 创建一个save对象
+        ShortSave save = new ShortSave();
+
+        return save;
+    }
+
+    public void ShortSaveByJson()
+    {
+        //一样的，我们使用CreateSaveGameObject()方法，得到要保存的Save
+        ShortSave save = CreateShortSave();
+
+        //! Json的保存方式是JsonString，因此我们需要创建一个对应的String
+        string JsonString = JsonUtility.ToJson(save);
+        //利用 JsonUtility.ToJson()得到我们所需要的东西，【对象save】->【JSON字符串JsonString】
+
+        //随后实例化一个流写入类：StreamWriter类
+        StreamWriter sw = new StreamWriter(Application.dataPath + "ShortSave_DATA.text");
+        //StreamWriter类允许将字符和字符串写入文件，参数是写入数据的地方的“完整文件路径”
+        sw.Write(JsonString);//写入
+        sw.Close();
+    }
+
+    public void LoadShortSave()
+    {
+        // 检测文件存在
+        if (File.Exists(Application.dataPath + "ShortSave_DATA.text"))
+        {
+            //读取文件
+            StreamReader sr = new StreamReader(Application.dataPath + "ShortSave_DATA.text");
+
+
+            //将文件转换为string
+            string JsonString = sr.ReadToEnd();            
+            //ReadToEnd()读取的是来自流的当前位置到结尾的所有字符(从整个流或流的当前位置，读取至结尾)
+            sr.Close();
+
+            // 得到save文件
+            ShortSave save = JsonUtility.FromJson<ShortSave>(JsonString); 
+
+            //按需求还原
+        }
+    }
+
+    // LongSave
+
+    public LongSave CreateLongSave()
+    {
+        LongSave save = new LongSave();
+
+        return save;
+    }
+
+    public void LongsaveByJson()
+    {
+        //一样的，我们使用CreateSaveGameObject()方法，得到要保存的Save
+        LongSave save = CreateLongSave();
+
+        //! Json的保存方式是JsonString，因此我们需要创建一个对应的String
+        string JsonString = JsonUtility.ToJson(save);
+        //利用 JsonUtility.ToJson()得到我们所需要的东西，【对象save】->【JSON字符串JsonString】
+
+        //随后实例化一个流写入类：StreamWriter类
+        StreamWriter sw = new StreamWriter(Application.dataPath + "LongSave_DATA.text");
+        //StreamWriter类允许将字符和字符串写入文件，参数是写入数据的地方的“完整文件路径”
+        sw.Write(JsonString);//写入
+        sw.Close();
+    }
+
+    public void LoadLongSave()
+    {
+        // 检测文件存在
+        if (File.Exists(Application.dataPath + "LongSave_DATA.text"))
+        {
+            //读取文件
+            StreamReader sr = new StreamReader(Application.dataPath + "LongSave_DATA.text");
+
+
+            //将文件转换为string
+            string JsonString = sr.ReadToEnd();
+            //ReadToEnd()读取的是来自流的当前位置到结尾的所有字符(从整个流或流的当前位置，读取至结尾)
+            sr.Close();
+
+            // 得到save文件
+            LongSave save = JsonUtility.FromJson<LongSave>(JsonString);
+
+            //按需求还原
+        }
+    }
+
+}
+
+[System.Serializable]
+public class ShortSave
+{
+
+}
+
+
+[System.Serializable]
+public class LongSave
+{
+    //仅做演示，目前longSave还没有很充分的保存内容。这里只存储了游戏次数作为展示使用
+
+    public int gameTime; 
 }

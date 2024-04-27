@@ -82,6 +82,9 @@ public class RoomMgr : MonoBehaviour
         public void PassRoom()
     {
         // Í¨¹ý
+
+        RhythmMgr.GetInstance().StopAllMusicRhy();
+
         passAudio.Play();
 
         foreach (GameObject _door in doors)

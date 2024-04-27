@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class RhythmMgr : SingletonMono<RhythmMgr>
 {
     [Header("BGM设置区")]
+    [SerializeField] private bool isRealWorking = true; // 设置为true才会进行工作。如果被StopAllMusicRhy设置为false则停工
+
     public GameObject realPlayer;
     public AudioSource realAudio;
 
@@ -53,12 +55,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
         timeToArrive = delayPlay_Record;
 
-        /*        RhyInterval = (60 / RhyBpm) * RhyMul;
-                Debug.Log(("!!! : || " + RhyInterval));
-
-                RhyToleranceTimer = RhyTolerance;
-                RhyIntervalTimer = RhyInterval;*/
-
         // kore
         Koreographer.Instance.RegisterForEvents(eventID, DrumBeat); // 注册
 
@@ -67,7 +63,8 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     // Update is called once per frame
     void Update()
     {
-
+        // 测试
+        if(Input.GetKeyDown(KeyCode.N)) StopAllMusicRhy();
     }
 
     public float gettimeToArrive()
@@ -96,7 +93,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         }
 
         // 延迟播放设置
-        if (!realAudio.isPlaying)
+        if (!realAudio.isPlaying && isRealWorking)
         {
            if(isActive)
             {
@@ -209,70 +206,16 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         PlayerSc.PlayerRhyOff();
     }
 
+    public void StopAllMusicRhy()
+    {
 
-    /*
-     * 
-     *     [Header("BGM设置区_旧版")]
-    // public float RhyTolerance;
-    public float RhyBgmName;
+        // 停用所有的，由Rhy控制的Player
 
-    public float RhyBpm;
-    public float RhyMul; 
+        isRealWorking = false;
 
-    public float RhyInterval; // 鼓点间隔，后期使用插件这块可能会弃用 
-    public float RhyIntervalTimer; 
-    [SerializeField] private bool isAvive = false;
-    [SerializeField] private bool playerRhy = false;
-     * 
-             if (!isAvive)
-        {
-            if (RhyToleranceTimer <= 0.0f)
-            {
-                //开始
-                RhyMgrStart();
-                RhyToleranceTimer = RhyTolerance;
+        realAudio.Stop();
+        audioSource.Stop();
 
+    }
 
-            }
-            else
-            {
-                RhyToleranceTimer -= Time.fixedDeltaTime;
-            }
-        }
-        else
-        {
-            if(RhyIntervalTimer > 0.0f)
-            {
-                RhyIntervalTimer -= Time.fixedDeltaTime;
-                
-/*                if((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
-                {
-                    PlayerRhyOn();//激活
-                }else if((RhyIntervalTimer <= RhyInterval-RhyTolerance) &&(playerRhy == true) )
-                {
-                    PlayerRhyOff(); 
-
-                   //关闭
-                }
-
-
-                if((RhyIntervalTimer <= RhyInterval - RhyTolerance)&& (RhyIntervalTimer > RhyTolerance) && (playerRhy == true)){
-                    PlayerRhyOff();
-                        }else if ((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
-                        {
-                            PlayerRhyOn();//激活
-
-                        }
-                                    }
-                                    else
-                        {
-                            // RhyIntervalTimer到0后，通知并归位
-                            NotifyObjs();
-                            RhyIntervalTimer = RhyInterval;
-
-                        }
-
-        }
-     
-     */
 }

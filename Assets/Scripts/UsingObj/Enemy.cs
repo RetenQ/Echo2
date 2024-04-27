@@ -12,6 +12,7 @@ public class Enemy : Chara
     public NavMeshAgent2D Nav2dAgent;
 
     [Header("敌人参数")]
+    public GameObject roomMgr; 
     [SerializeField] protected GameObject Player;
     [SerializeField] protected PlayerBase PlayerSc;
     public GameObject firePoint; //射击位置
@@ -64,7 +65,10 @@ public class Enemy : Chara
     public GameObject deathEx; 
 
 
-
+    public void setRoomManager(GameObject _mgr)
+    {
+        this.roomMgr = _mgr; //设置
+    }
     protected override void ObjAwake()
     {
         animator = GetComponent<Animator>();
@@ -147,19 +151,14 @@ public class Enemy : Chara
 
     }
 
-    public void setEnemyAlive()
-    {
-        this.alive = true; 
-    }
-    public void setEnemyNoAlive()
-    {
-        this.alive = false;
-    }
 
     public override void ObjDeath()
     {
         base.ObjDeath();
         // 敌人通用的死亡
+
+        // 在room中取消订阅
+        roomMgr.GetComponent<RoomMgr>().ReomveObj(gameObject);
 
         GameObject _deathEx = GameObject.Instantiate(deathEx, transform.position, Quaternion.identity);
         Destroy(gameObject); //销毁自己

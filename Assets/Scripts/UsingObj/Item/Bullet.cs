@@ -122,6 +122,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(gameObject.name + " dw  " + collision.name);
+
         //Debug.Log(collision);
         //注：子弹碰到后不会摧毁
         if(isActive)

@@ -9,6 +9,14 @@ public class RoomMgr : MonoBehaviour
     public AudioSource passAudio;
     public List<GameObject> doors = new List<GameObject>(); // 用来阻拦的门
 
+    public List<GameObject> enenmyGen= new List<GameObject>(); //激活的生成器
+
+    public int EnemySum; //敌人总数
+
+    private void Start()
+    {
+        IniEnemyInList();
+    }
     public void RegisterObj(GameObject _obj)
     {
         // 一般用不到，因为正常情况都会提前加好
@@ -17,24 +25,61 @@ public class RoomMgr : MonoBehaviour
 
     public void ReomveObj(GameObject _obj)
     {
+        EnemySum--;
+
         enemys.Remove(_obj);
-        if(enemys.Count == 0)
+        if(enemys.Count == 0 && EnemySum <= 0)
         {
             // 清空了
             PassRoom(); 
         }
     }
 
-    public void EnterRoom()
+    public void IniEnemyInList()
     {
-        // 玩家进入
-        foreach(GameObject _door in doors)
+        foreach(GameObject _obj in enemys)
         {
-            _door.SetActive(true);
+            _obj.GetComponent<BaseObj>().setAlive();
         }
     }
 
-    public void PassRoom()
+    public void IniEnemy(GameObject _obj)
+    {
+        // 添加的敌人要被调用，然后设置每个敌人的roommanager和敌人对于
+        _obj.GetComponent<Enemy>().setRoomManager(gameObject); 
+    }
+
+    public void EnterRoom()
+    {
+        // 玩家进入
+        if (doors.Count > 0)
+        {
+            foreach (GameObject _door in doors)
+            {
+                _door.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.Log("List_doors is empty");
+        }
+
+        if (enenmyGen.Count > 0)
+        {
+            foreach (GameObject _gen in enenmyGen)
+            {
+                _gen.GetComponent<BaseObj>().setAlive();
+            }
+
+        }
+        else
+        {
+            Debug.Log("enenmyGen is empty");
+
+        }
+    }
+
+        public void PassRoom()
     {
         // 通过
         passAudio.Play();

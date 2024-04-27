@@ -37,11 +37,13 @@ public class LevelUIMgr : MonoBehaviour
         UpdatetheRoughItemUI();
 
         StartCoroutine(FadeIn());
+
+        setItem();
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.U)) setItem(); 
+       // if (Input.GetKeyUp(KeyCode.U)) setItem(); 
 
     }
 

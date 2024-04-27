@@ -138,7 +138,8 @@ public class GameManager : SingletonMono<GameManager>
         // 首先加入玩家的列表
         int tmp = rogueItem.type;
 
-        if (tmp == 1) playerSC.FireItems.Add(_item);
+        if(tmp== 0) playerSC.dataItems.Add(_item);
+        else if (tmp == 1) playerSC.FireItems.Add(_item);
         else if (tmp == 2) playerSC.AttackItems.Add(_item);
         else if (tmp == 3) playerSC.DashOnItems.Add(_item);
         else if (tmp == 4) playerSC.DashOffItems.Add(_item);

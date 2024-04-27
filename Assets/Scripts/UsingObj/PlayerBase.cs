@@ -35,7 +35,7 @@ public class PlayerBase : Chara
     public GameObject trailEffect_last;
 
     [Header("道具部分")]
-    public List<GameObject> dataItems = new List<GameObject>(); //读取时就释放
+    public List<GameObject> dataItems = new List<GameObject>(); //type0 读取时就释放
     public List<GameObject> FireItems = new List<GameObject>(); // type1
     public List<GameObject> AttackItems = new List<GameObject>(); // type2
     public List<GameObject> DashOnItems = new List<GameObject>();// type3
@@ -83,18 +83,23 @@ public class PlayerBase : Chara
         attackArea = transform.Find("AttackArea").gameObject; 
         attackAreaSC = attackArea.GetComponent<Player_AttackArea>();
 
-        UsingItemsInList(dataItems);
     }
 
     protected override void ObjStart()
     {
         GameManager.GetInstance().getNewPlayer(gameObject); // 注册
         ReloadtheItems(GameManager.GetInstance().rogueItems_chosen); //读取MGR的内容
+        UsingItemsInList(dataItems);
 
     }
 
     protected override void ObjUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            UsingItemsInList(dataItems); 
+        }
+
 
         // Debug.Log("R:" + RightD + " || E:" + ErrorD);
 
@@ -516,13 +521,15 @@ public class PlayerBase : Chara
         {
             RogueItem rogueItem = _item.GetComponent<RogueItem>();
             int tmp = rogueItem.type;
-
-            if (tmp == 1)      FireItems.Add(_item);
+            if (tmp == 0)       dataItems.Add(_item);
+            else if (tmp == 1)      FireItems.Add(_item);
             else if (tmp == 2) AttackItems.Add(_item);
             else if (tmp == 3) DashOnItems.Add(_item);
             else if (tmp == 4) DashOffItems.Add(_item);
             else if (tmp == 5) HurtItems.Add(_item);
             else Debug.Log("ADD ITEM FALSE!!!");
+
+            _item.GetComponent<RogueItem>().Itemuser = this; 
         }
         // 首先加入玩家的列表
 

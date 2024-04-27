@@ -9,14 +9,14 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 {
     [Header("BGM设置区")]
     public GameObject realPlayer;
-    public AudioSource realAudio; 
+    public AudioSource realAudio;
 
-    [SerializeField]private bool isActive = false;
+    [SerializeField] private bool isActive = false;
     public string eventID;
     public float RhyTolerance; // isRhy为True多久之后改回false
-    public float RhyToleranceTimer ;
-    public float startPlay ; // 倒计时多久之后开始节奏系统
-    public float delayPlay ; // 延迟播放，实际上是可以提前多少秒踩点
+    public float RhyToleranceTimer;
+    public float startPlay; // 倒计时多久之后开始节奏系统
+    public float delayPlay; // 延迟播放，实际上是可以提前多少秒踩点
 
     public bool isRhy = false;
     [SerializeField] private float timeToArrive; // 用于计算UI
@@ -25,13 +25,12 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
 
     [Header("注册区")]
-    [SerializeField]private GameObject Player; 
-    [SerializeField]private PlayerBase PlayerSc; 
+    [SerializeField] private GameObject Player;
+    [SerializeField] private PlayerBase PlayerSc;
     public List<BaseObj> Objs;
 
     [Header("组件")]
     public AudioSource audioSource;
-    public Image RhyBar; 
 
     protected override void Awake()
     {
@@ -42,7 +41,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindWithTag("Player"); 
+        Player = GameObject.FindWithTag("Player");
         PlayerSc = Player.GetComponent<PlayerBase>();
         audioSource = GetComponent<AudioSource>();
 
@@ -52,13 +51,13 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
         delayPlay_Record = delayPlay;
 
-        timeToArrive = delayPlay_Record; 
+        timeToArrive = delayPlay_Record;
 
-/*        RhyInterval = (60 / RhyBpm) * RhyMul;
-        Debug.Log(("!!! : || " + RhyInterval));
+        /*        RhyInterval = (60 / RhyBpm) * RhyMul;
+                Debug.Log(("!!! : || " + RhyInterval));
 
-        RhyToleranceTimer = RhyTolerance;
-        RhyIntervalTimer = RhyInterval;*/
+                RhyToleranceTimer = RhyTolerance;
+                RhyIntervalTimer = RhyInterval;*/
 
         // kore
         Koreographer.Instance.RegisterForEvents(eventID, DrumBeat); // 注册
@@ -68,7 +67,17 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public float gettimeToArrive()
+    {
+        return timeToArrive;
+    }
+
+    public float getdelayPlay_Record()
+    {
+        return delayPlay_Record;
     }
 
     private void FixedUpdate()
@@ -117,9 +126,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
 
         timeToArrive -= Time.fixedDeltaTime;
-
-        RhyBar.fillAmount = (1.0f - (timeToArrive / delayPlay_Record)); 
-
     }
 
     private void DrumBeat(KoreographyEvent koreographyEvent)

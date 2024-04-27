@@ -115,27 +115,41 @@ public class Enemy : Chara
 
     protected override void ObjUpdate()
     {
-        DataUpdater();
-
-        FindPlayer();
-
-        if (Vector2.Distance(transform.position, target.transform.position) <= attackArrange)
+        if (isActive)
         {
-            // 玩家进入攻击范围
-            if (attackCDTimer >= 0.01f)
-            {
-                attackCDTimer -= Time.deltaTime;
-            }
-            else
-            {
-                //Debug.Log("?");
-                Attack();
-                // Debug.Log("!");
+            // 启动后开始执行
 
-                attackCDTimer = AttackCD;
+            DataUpdater();
+
+            FindPlayer();
+
+            if (Vector2.Distance(transform.position, target.transform.position) <= attackArrange)
+            {
+                // 玩家进入攻击范围
+                if (attackCDTimer >= 0.01f)
+                {
+                    attackCDTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    //Debug.Log("?");
+                    Attack();
+                    // Debug.Log("!");
+
+                    attackCDTimer = AttackCD;
+                }
             }
         }
 
+    }
+
+    public void setEnemyAlive()
+    {
+        this.isActive = true; 
+    }
+    public void setEnemyNoAlive()
+    {
+        this.isActive = false;
     }
 
     private void DataUpdater()

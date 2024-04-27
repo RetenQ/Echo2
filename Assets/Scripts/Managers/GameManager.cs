@@ -92,7 +92,7 @@ public class GameManager : SingletonMono<GameManager>
     public void getNewPlayer(GameObject _player)
     {
         player = _player;
-        playerSC = playerSC.GetComponent<PlayerBase>(); 
+        playerSC = player.GetComponent<PlayerBase>(); 
     }
 
 

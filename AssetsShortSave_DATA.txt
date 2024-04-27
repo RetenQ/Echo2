@@ -1,0 +1,1 @@
+{"theScore_sum":0.0,"rogueItems_canChose":[{"instanceID":52206},{"instanceID":52206},{"instanceID":52206},{"instanceID":52206}],"rogueItems_chosen":[],"stage":1,"scene_index":0,"mapseed":""}

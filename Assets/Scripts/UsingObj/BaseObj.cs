@@ -24,7 +24,7 @@ using UnityEngine;
 public class BaseObj : MonoBehaviour
 {
     [Header("基础数值")]
-    public bool alive = true ; 
+    public bool alive = false; 
 
     public float maxHp;
     public float nowHp;
@@ -58,7 +58,8 @@ public class BaseObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(isRhyObj)
+
+        if (isRhyObj)
         {
             // 如果是在节奏系统中的物体，需要注册
             RhythmMgr.GetInstance().RegistertObj(this);
@@ -108,7 +109,11 @@ public class BaseObj : MonoBehaviour
                 RhythmMgr.GetInstance().RemoveObj(this); // 解除注册
             }
 
-            KillNotify(lastHurtby);
+            if(lastHurtby != null)
+            {
+                KillNotify(lastHurtby);
+
+            }
 
             ObjDeath();
 
@@ -138,6 +143,8 @@ public class BaseObj : MonoBehaviour
 
     public virtual void Hurt(float _damage , BaseObj _hurtby)
     {
+        Debug.Log(gameObject.name + "HURT");
+
         if(gameObject.CompareTag("Wall"))
         {
             // 目前不做墙体伤害
@@ -187,5 +194,14 @@ public class BaseObj : MonoBehaviour
     {
         // 响应节奏系统的具体操作
     }
-    
+
+    public void setAlive()
+    {
+        alive = true;
+    }
+
+    public void setNoAlive()
+    {
+        alive = false; 
+    }
 }

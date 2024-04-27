@@ -18,6 +18,12 @@ public class CameraMgr : SingletonMono<CameraMgr>
     void Start()
     {
         //TheCamera = this.gameObject.GetComponent<Camera>().transform;
+        TheCamera = GameObject.Find("Main Camera").transform;
+
+        //!!!!!注意时间。因为这个脚本和Mgr的运行时间的前后不一定确定，所以自己负责获取
+        // target = GameManager.GetInstance().player.transform;
+        target = GameObject.Find("Player1").transform;// 测试中用Player1获取，后面记得改
+
     }
 
     // Update is called once per frame

@@ -12,7 +12,7 @@ public class Enemy : Chara
     public NavMeshAgent2D Nav2dAgent;
 
     [Header("敌人参数")]
-    [SerializeField] private bool isActive; //敌人是否启动
+    public GameObject roomMgr; 
     [SerializeField] protected GameObject Player;
     [SerializeField] protected PlayerBase PlayerSc;
     public GameObject firePoint; //射击位置
@@ -61,11 +61,14 @@ public class Enemy : Chara
     public float rocketAngle;
     public float rocketLerp;
 
-    [Header("辅助")]
-    private bool nothing; // 作为分隔的变量
+    [Header("死亡特效")]
+    public GameObject deathEx; 
 
 
-
+    public void setRoomManager(GameObject _mgr)
+    {
+        this.roomMgr = _mgr; //设置
+    }
     protected override void ObjAwake()
     {
         animator = GetComponent<Animator>();
@@ -115,27 +118,50 @@ public class Enemy : Chara
 
     protected override void ObjUpdate()
     {
-        DataUpdater();
+        DataUpdater(); // 数据更新涉及UI，会一直更新
 
-        FindPlayer();
 
-        if (Vector2.Distance(transform.position, target.transform.position) <= attackArrange)
+        if (alive)
         {
-            // 玩家进入攻击范围
-            if (attackCDTimer >= 0.01f)
-            {
-                attackCDTimer -= Time.deltaTime;
-            }
-            else
-            {
-                //Debug.Log("?");
-                Attack();
-                // Debug.Log("!");
+            // 启动后开始执行
 
-                attackCDTimer = AttackCD;
+            FindPlayer();
+
+            if (Vector2.Distance(transform.position, target.transform.position) <= attackArrange)
+            {
+                // 玩家进入攻击范围
+                if (attackCDTimer >= 0.01f)
+                {
+                    attackCDTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    //Debug.Log("?");
+                    Attack();
+                    // Debug.Log("!");
+
+                    attackCDTimer = AttackCD;
+                }
             }
         }
+        else
+        {
+            Nav2dAgent.speed = 0;
+        }
 
+    }
+
+
+    public override void ObjDeath()
+    {
+        base.ObjDeath();
+        // 敌人通用的死亡
+
+        // 在room中取消订阅
+        roomMgr.GetComponent<RoomMgr>().ReomveObj(gameObject);
+
+        GameObject _deathEx = GameObject.Instantiate(deathEx, transform.position, Quaternion.identity);
+        Destroy(gameObject); //销毁自己
     }
 
     private void DataUpdater()

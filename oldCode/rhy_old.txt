@@ -1,0 +1,65 @@
+    /*
+     * 
+     *     [Header("BGM设置区_旧版")]
+    // public float RhyTolerance;
+    public float RhyBgmName;
+
+    public float RhyBpm;
+    public float RhyMul; 
+
+    public float RhyInterval; // 鼓点间隔，后期使用插件这块可能会弃用 
+    public float RhyIntervalTimer; 
+    [SerializeField] private bool isAvive = false;
+    [SerializeField] private bool playerRhy = false;
+     * 
+             if (!isAvive)
+        {
+            if (RhyToleranceTimer <= 0.0f)
+            {
+                //开始
+                RhyMgrStart();
+                RhyToleranceTimer = RhyTolerance;
+
+
+            }
+            else
+            {
+                RhyToleranceTimer -= Time.fixedDeltaTime;
+            }
+        }
+        else
+        {
+            if(RhyIntervalTimer > 0.0f)
+            {
+                RhyIntervalTimer -= Time.fixedDeltaTime;
+                
+/*                if((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
+                {
+                    PlayerRhyOn();//激活
+                }else if((RhyIntervalTimer <= RhyInterval-RhyTolerance) &&(playerRhy == true) )
+                {
+                    PlayerRhyOff(); 
+
+                   //关闭
+                }
+
+
+                if((RhyIntervalTimer <= RhyInterval - RhyTolerance)&& (RhyIntervalTimer > RhyTolerance) && (playerRhy == true)){
+                    PlayerRhyOff();
+                        }else if ((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
+                        {
+                            PlayerRhyOn();//激活
+
+                        }
+                                    }
+                                    else
+                        {
+                            // RhyIntervalTimer到0后，通知并归位
+                            NotifyObjs();
+                            RhyIntervalTimer = RhyInterval;
+
+                        }
+
+        }
+     
+     */

@@ -8,15 +8,17 @@ using UnityEngine.UI;
 public class RhythmMgr : SingletonMono<RhythmMgr>
 {
     [Header("BGM设置区")]
-    public GameObject realPlayer;
-    public AudioSource realAudio; 
+    [SerializeField] private bool isRealWorking = true; // 设置为true才会进行工作。如果被StopAllMusicRhy设置为false则停工
 
-    [SerializeField]private bool isActive = false;
+    public GameObject realPlayer;
+    public AudioSource realAudio;
+
+    [SerializeField] private bool isActive = false;
     public string eventID;
     public float RhyTolerance; // isRhy为True多久之后改回false
-    public float RhyToleranceTimer ;
-    public float startPlay ; // 倒计时多久之后开始节奏系统
-    public float delayPlay ; // 延迟播放，实际上是可以提前多少秒踩点
+    public float RhyToleranceTimer;
+    public float startPlay; // 倒计时多久之后开始节奏系统
+    public float delayPlay; // 延迟播放，实际上是可以提前多少秒踩点
 
     public bool isRhy = false;
     [SerializeField] private float timeToArrive; // 用于计算UI
@@ -25,13 +27,12 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
 
     [Header("注册区")]
-    [SerializeField]private GameObject Player; 
-    [SerializeField]private PlayerBase PlayerSc; 
+    [SerializeField] private GameObject Player;
+    [SerializeField] private PlayerBase PlayerSc;
     public List<BaseObj> Objs;
 
     [Header("组件")]
     public AudioSource audioSource;
-    public Image RhyBar; 
 
     protected override void Awake()
     {
@@ -42,7 +43,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindWithTag("Player"); 
+        Player = GameObject.FindWithTag("Player");
         PlayerSc = Player.GetComponent<PlayerBase>();
         audioSource = GetComponent<AudioSource>();
 
@@ -52,13 +53,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
         delayPlay_Record = delayPlay;
 
-        timeToArrive = delayPlay_Record; 
-
-/*        RhyInterval = (60 / RhyBpm) * RhyMul;
-        Debug.Log(("!!! : || " + RhyInterval));
-
-        RhyToleranceTimer = RhyTolerance;
-        RhyIntervalTimer = RhyInterval;*/
+        timeToArrive = delayPlay_Record;
 
         // kore
         Koreographer.Instance.RegisterForEvents(eventID, DrumBeat); // 注册
@@ -68,7 +63,18 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     // Update is called once per frame
     void Update()
     {
-        
+        // 测试
+        if(Input.GetKeyDown(KeyCode.N)) StopAllMusicRhy();
+    }
+
+    public float gettimeToArrive()
+    {
+        return timeToArrive;
+    }
+
+    public float getdelayPlay_Record()
+    {
+        return delayPlay_Record;
     }
 
     private void FixedUpdate()
@@ -87,7 +93,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         }
 
         // 延迟播放设置
-        if (!realAudio.isPlaying)
+        if (!realAudio.isPlaying && isRealWorking)
         {
            if(isActive)
             {
@@ -117,9 +123,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
 
         timeToArrive -= Time.fixedDeltaTime;
-
-        RhyBar.fillAmount = (1.0f - (timeToArrive / delayPlay_Record)); 
-
     }
 
     private void DrumBeat(KoreographyEvent koreographyEvent)
@@ -203,70 +206,16 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         PlayerSc.PlayerRhyOff();
     }
 
+    public void StopAllMusicRhy()
+    {
 
-    /*
-     * 
-     *     [Header("BGM设置区_旧版")]
-    // public float RhyTolerance;
-    public float RhyBgmName;
+        // 停用所有的，由Rhy控制的Player
 
-    public float RhyBpm;
-    public float RhyMul; 
+        isRealWorking = false;
 
-    public float RhyInterval; // 鼓点间隔，后期使用插件这块可能会弃用 
-    public float RhyIntervalTimer; 
-    [SerializeField] private bool isAvive = false;
-    [SerializeField] private bool playerRhy = false;
-     * 
-             if (!isAvive)
-        {
-            if (RhyToleranceTimer <= 0.0f)
-            {
-                //开始
-                RhyMgrStart();
-                RhyToleranceTimer = RhyTolerance;
+        realAudio.Stop();
+        audioSource.Stop();
 
+    }
 
-            }
-            else
-            {
-                RhyToleranceTimer -= Time.fixedDeltaTime;
-            }
-        }
-        else
-        {
-            if(RhyIntervalTimer > 0.0f)
-            {
-                RhyIntervalTimer -= Time.fixedDeltaTime;
-                
-/*                if((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
-                {
-                    PlayerRhyOn();//激活
-                }else if((RhyIntervalTimer <= RhyInterval-RhyTolerance) &&(playerRhy == true) )
-                {
-                    PlayerRhyOff(); 
-
-                   //关闭
-                }
-
-
-                if((RhyIntervalTimer <= RhyInterval - RhyTolerance)&& (RhyIntervalTimer > RhyTolerance) && (playerRhy == true)){
-                    PlayerRhyOff();
-                        }else if ((RhyIntervalTimer <= RhyTolerance) && (playerRhy == false))
-                        {
-                            PlayerRhyOn();//激活
-
-                        }
-                                    }
-                                    else
-                        {
-                            // RhyIntervalTimer到0后，通知并归位
-                            NotifyObjs();
-                            RhyIntervalTimer = RhyInterval;
-
-                        }
-
-        }
-     
-     */
 }

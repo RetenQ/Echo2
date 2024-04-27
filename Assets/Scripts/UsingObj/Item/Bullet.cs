@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] private bool arrived; //是否已经到目标位置了，到了就是直线运动
 
 
-    [SerializeField] private bool isActive = true; 
     // Start is called before the first frame update
     void Start()
     {
@@ -122,10 +121,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Debug.Log(gameObject.name + " dw  " + collision.name);
+
         //Debug.Log(collision);
-        //注：子弹碰到后不会摧毁
-        if(isActive)
-        {
+        //注：现在子弹碰到就销毁
+
             if(collision.CompareTag("Wall"))
             {
                 //碰到墙就只停下了
@@ -150,9 +150,7 @@ public class Bullet : MonoBehaviour
 
 
 
-            // 保证子弹只会被触发一次
-            isActive = false;
-        }
+        
 
     }
 }

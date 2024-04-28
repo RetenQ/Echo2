@@ -95,12 +95,6 @@ public class PlayerBase : Chara
 
     protected override void ObjUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            UsingItemsInList(dataItems); 
-        }
-
-
         // Debug.Log("R:" + RightD + " || E:" + ErrorD);
 
         DataUpdater();
@@ -304,6 +298,17 @@ public class PlayerBase : Chara
     {
         rb.velocity = Vector2.zero; // 将速度设置为零向量
 
+    }
+
+    public void StopPlayer()
+    {
+        // 停止player的所有操作
+        StopMove();
+        audio_attack.Stop();
+        audio_dash.Stop();
+        audio_run.Stop();
+
+        islock = true; 
     }
 
     private void DataUpdater()

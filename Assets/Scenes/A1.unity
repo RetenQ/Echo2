@@ -2225,7 +2225,7 @@ MonoBehaviour:
   maxHp: 100
   nowHp: 0
   attack: 10
-  speed: 3
+  speed: 4
   lastAttackto: {fileID: 0}
   lastHurtby: {fileID: 0}
   isRhyObj: 0

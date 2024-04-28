@@ -12,6 +12,8 @@ public class Portal_NextRoom : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<PlayerBase>().StopPlayer(); // Ëø¶¨player
+
             LoadScene(toScene); 
         }
     }

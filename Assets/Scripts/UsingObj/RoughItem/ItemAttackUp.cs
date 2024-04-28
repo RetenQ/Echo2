@@ -7,6 +7,9 @@ public class ItemAttackUp : RogueItem
 
     public override void ItemFun()
     {
+        base.ItemFun();
+
+
         Itemuser.attack += 5;
     }
 }

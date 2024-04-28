@@ -315,6 +315,21 @@ public class GameManager : SingletonMono<GameManager>
         }
     }
 
+
+    // 延迟执行
+    public void DelayedFunction(float delay, System.Action function)
+    {
+        StartCoroutine(DelayedCoroutine(delay, function));
+    }
+
+    private IEnumerator DelayedCoroutine(float delay, System.Action function)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // 在这里执行延迟函数
+        function?.Invoke();
+    }
+
 }
 
 

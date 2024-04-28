@@ -43,7 +43,7 @@ public class LevelUIMgr : MonoBehaviour
 
     void Update()
     {
-       // if (Input.GetKeyUp(KeyCode.U)) setItem(); 
+        if (Input.GetKeyUp(KeyCode.U)) setItem(); 
 
     }
 

@@ -40,6 +40,7 @@ public class GameManager : SingletonMono<GameManager>
 
     [Header("长期存档内容")]
     public int gameTime; 
+    public string LastIn; 
 
     protected override void Awake()
     {
@@ -189,6 +190,12 @@ public class GameManager : SingletonMono<GameManager>
         SceneManager.LoadScene(_name); //
     }
 
+    public void GameOver()
+    {
+        LongsaveByJson();
+        LoadNextScene("MainRoom"); 
+    }
+
 
     // 存档系统相关
 
@@ -276,6 +283,7 @@ public class GameManager : SingletonMono<GameManager>
         LongSave save = CreateLongSave();
 
         save.gameTime= gameTime+1; //现在是保存的时候都默认加一次
+        save.LastIn = "StageA"; // 目前只有一层，所以都是Stage1
 
         //! Json的保存方式是JsonString，因此我们需要创建一个对应的String
         string JsonString = JsonUtility.ToJson(save);
@@ -307,6 +315,7 @@ public class GameManager : SingletonMono<GameManager>
 
             //按需求还原
             gameTime = save.gameTime;
+            LastIn = save.LastIn;
         }
         else
         {
@@ -338,5 +347,6 @@ public class LongSave
 {
     //仅做演示，目前longSave还没有很充分的保存内容。这里只存储了游戏次数作为展示使用
 
-    public int gameTime; 
+    public int gameTime;
+    public string LastIn;
 }

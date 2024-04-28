@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 // 管理BGM的东西
 public class RhythmMgr : SingletonMono<RhythmMgr>
@@ -17,8 +18,11 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     public string eventID;
     public float RhyTolerance; // isRhy为True多久之后改回false
     public float RhyToleranceTimer;
+    public float AllowPressAdvance; //允许提前多久 ， 实际和delayPlaySET配合算出可以延迟触发的时间
+
     public float startPlay; // 倒计时多久之后开始节奏系统
-    public float delayPlay; // 延迟播放，实际上是可以提前多少秒踩点
+    public float delayPlaySET; // 延迟播放（设置）
+    [SerializeField]private float delayPlayTimer; // 延迟播放
 
     public bool isRhy = false;
     [SerializeField] private float timeToArrive; // 用于计算UI
@@ -30,6 +34,17 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     [SerializeField] private GameObject Player;
     [SerializeField] private PlayerBase PlayerSc;
     public List<BaseObj> Objs;
+
+    [Header("UI区域")]
+    public GameObject canvasObj; // UI Canvas的引用  
+    public RectTransform canvas; // UI Canvas的引用  
+    public Sprite imageSprite; // 要使用的Image的Sprite  
+    public Vector2 spawnPosition; // Image的生成位置  
+    public float moveSpeed = 100f; // Image的移动速度  
+    public float UIScale; 
+
+    private Image movingImage; // 动态创建的Image  
+    private float disappearanceTime = 1f; // Image消失的时间（秒）  
 
     [Header("组件")]
     public AudioSource audioSource;
@@ -51,12 +66,18 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         realAudio = realPlayer.GetComponent<AudioSource>(); // 真实的播放器
         realAudio.clip = audioSource.clip;
 
-        delayPlay_Record = delayPlay;
+
+        delayPlayTimer = delayPlaySET;
+        delayPlay_Record = delayPlayTimer;
 
         timeToArrive = delayPlay_Record;
 
         // kore
         Koreographer.Instance.RegisterForEvents(eventID, DrumBeat); // 注册
+
+
+        canvasObj = GameObject.Find("MainUI_Playing").gameObject;
+        canvas = canvasObj.GetComponent<RectTransform>();
 
     }
 
@@ -64,7 +85,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     void Update()
     {
         // 测试
-        if(Input.GetKeyDown(KeyCode.N)) StopAllMusicRhy();
+        if(Input.GetKeyDown(KeyCode.N)) genRhyUI();
     }
 
     public float gettimeToArrive()
@@ -97,13 +118,13 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         {
            if(isActive)
             {
-                if(delayPlay <=0)
+                if(delayPlayTimer <=0)
                 {
                     PlayRealAudio();
                 }
                 else
                 {
-                    delayPlay -= Time.fixedDeltaTime;   
+                    delayPlayTimer -= Time.fixedDeltaTime;   
                 }
             }
         }
@@ -127,9 +148,33 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
     private void DrumBeat(KoreographyEvent koreographyEvent)
     {
+        Debug.Log("接受到： " + Time.time);
+        genRhyUI(); //生成UI
+
+        if (koreographyEvent.HasIntPayload())
+        {
+            int tmp = koreographyEvent.GetIntValue();
+
+            // 检测是不是退出的代码，即99
+            if(tmp == 99)
+            {
+                // 游戏结束
+                GameManager.GetInstance().GameOver();
+            }
+
+            StartCoroutine(DrumBeatDealay(true , tmp ));
+        }
+        else
+        {
+            StartCoroutine(DrumBeatDealay(false, 0));
+
+        }
+
+
+        //genRhyUI();
         // 到鼓点了干什么    
         // 测试payloads
-        if (koreographyEvent.HasIntPayload())
+/*        if (koreographyEvent.HasIntPayload())
         {
             int tmp = koreographyEvent.GetIntValue();
             // Debug.Log("ITS :|||" + tmp);
@@ -140,8 +185,37 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         {
             NotifyObjs(0);
             PlayerRhyOn();
-        }
+        }*/
         //
+    }
+
+    IEnumerator DrumBeatDealay(bool havePayLoad , int tmp)
+    {
+
+        Debug.Log("Coroutine started, waiting for " + delayPlaySET + " seconds...");
+
+        yield return new WaitForSeconds(delayPlaySET - AllowPressAdvance); //实际上设置了可以提前多久触发
+
+        Debug.Log("Delayed function executed after " + delayPlaySET + " seconds");
+
+        DrumBeatDealay_Real(havePayLoad , tmp);
+
+    }
+
+    private void DrumBeatDealay_Real(bool havePayLoad, int tmp)
+    {
+        Debug.Log("调用到： " + Time.time);
+
+        if (havePayLoad)
+        {
+            NotifyObjs(tmp);
+            PlayerRhyOn();
+        }
+        else
+        {
+            NotifyObjs(0);
+            PlayerRhyOn();
+        }
     }
 
     private void PlayRealAudio()
@@ -216,6 +290,43 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         realAudio.Stop();
         audioSource.Stop();
 
+    }
+
+    public void genRhyUI()
+    {
+        Debug.Log("生成Drum "+Time.time);
+
+        // 创建新的Image并设置其位置和Sprite  
+        GameObject newImageObj = new GameObject("Moving Image");
+        movingImage = newImageObj.AddComponent<Image>();
+        movingImage.rectTransform.localScale = new Vector3(UIScale, UIScale, 1.0f); 
+        movingImage.sprite = imageSprite;
+        movingImage.rectTransform.SetParent(canvas, false);
+        movingImage.rectTransform.anchoredPosition = spawnPosition;
+
+        StartCoroutine(MoveAndDestroy(movingImage, disappearanceTime));
+
+    }
+
+    IEnumerator MoveAndDestroy(Image img, float delay)
+    {
+        // 使Image一直向左移动  
+        while (true)
+        {
+            img.rectTransform.anchoredPosition += Vector2.left * moveSpeed * Time.deltaTime;
+
+            // 检查是否到了销毁Image的时间  
+            if (delay <= 0)
+            {
+                Destroy(img.gameObject);
+                break;
+            }
+
+            // 减少剩余时间  
+            delay -= Time.deltaTime;
+
+            yield return null;
+        }
     }
 
 }

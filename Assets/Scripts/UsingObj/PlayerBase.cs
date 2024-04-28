@@ -394,7 +394,7 @@ public class PlayerBase : Chara
     {
         //Debug.Log("ON");
         inRhy = true;
-       // sr.color = Color.red; 
+        //sr.color = Color.red; 
     }
 
     public void PlayerRhyOff()
@@ -402,7 +402,7 @@ public class PlayerBase : Chara
         //Debug.Log("OFF!");
 
         inRhy = false;
-        //sr.color = Color.blue;
+       //sr.color = Color.blue;
 
     }
 

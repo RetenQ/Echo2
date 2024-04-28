@@ -152,7 +152,6 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   rocketDirection: {x: 0, y: 0, z: 0}
   arrived: 0
-  isActive: 1
 --- !u!96 &3081672534021327908
 TrailRenderer:
   serializedVersion: 2
@@ -192,8 +191,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -468525073
-  m_SortingLayer: 0
+  m_SortingLayerID: -691315721
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:

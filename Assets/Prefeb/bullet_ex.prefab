@@ -138,13 +138,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  directlyMove: 0
+  directlySpeed: 0
+  isRocket: 0
   shooter: {fileID: 0}
   damage: 1
   damageMul: 1
   maxLifeTime: 5
   targetStr: Enemy
   ignoreStr: Player
-  isActive: 1
+  lerp: 0
+  rocketSpeed: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  rocketDirection: {x: 0, y: 0, z: 0}
+  arrived: 0
 --- !u!96 &7097924802086793271
 TrailRenderer:
   serializedVersion: 2
@@ -184,8 +191,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -468525073
-  m_SortingLayer: 0
+  m_SortingLayerID: -691315721
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:

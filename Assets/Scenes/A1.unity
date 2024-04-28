@@ -67202,15 +67202,15 @@ PrefabInstance:
     - target: {fileID: 5172978472103236543, guid: a877a42c8c1b10a46be4b1e0c027ae4b, type: 3}
       propertyPath: rogueItems_ALL.Array.data[1]
       value: 
-      objectReference: {fileID: 5144356100221313589, guid: da906e0cbefdd544e8104437a04234cd, type: 3}
+      objectReference: {fileID: 7066103378768676458, guid: 14381e118f7756245b209aa2ab934c3c, type: 3}
     - target: {fileID: 5172978472103236543, guid: a877a42c8c1b10a46be4b1e0c027ae4b, type: 3}
       propertyPath: rogueItems_ALL.Array.data[2]
       value: 
-      objectReference: {fileID: 5144356100221313589, guid: da906e0cbefdd544e8104437a04234cd, type: 3}
+      objectReference: {fileID: 7368621181859213368, guid: 92b2aedddb9b6444fb0b317dd903cfe1, type: 3}
     - target: {fileID: 5172978472103236543, guid: a877a42c8c1b10a46be4b1e0c027ae4b, type: 3}
       propertyPath: rogueItems_ALL.Array.data[3]
       value: 
-      objectReference: {fileID: 5144356100221313589, guid: da906e0cbefdd544e8104437a04234cd, type: 3}
+      objectReference: {fileID: 752924726460757266, guid: 6861568583168184889c159b951bd300, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a877a42c8c1b10a46be4b1e0c027ae4b, type: 3}
 --- !u!1001 &7041276317623762654

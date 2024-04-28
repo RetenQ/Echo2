@@ -25,6 +25,7 @@ public class RogueItem : MonoBehaviour
     /// </summary>
     public virtual void ItemFun()
     {
-
+        // 挂载到使用者上去
+         // GameObject item = GameObject.Instantiate(gameObject, Itemuser.gameObject.transform);
     }
 }

@@ -190,6 +190,12 @@ public class GameManager : SingletonMono<GameManager>
         SceneManager.LoadScene(_name); //
     }
 
+    public void GameOver()
+    {
+        LongsaveByJson();
+        LoadNextScene("MainRoom"); 
+    }
+
 
     // 存档系统相关
 

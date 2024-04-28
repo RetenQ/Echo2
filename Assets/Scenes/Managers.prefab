@@ -196,6 +196,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   PlayerSc: {fileID: 0}
   Objs: []
+  canvasObj: {fileID: 0}
   canvas: {fileID: 0}
   imageSprite: {fileID: 909077424, guid: 6e33bcf1bb32f5e499310b5826e915b7, type: 3}
   spawnPosition: {x: 280, y: -440}

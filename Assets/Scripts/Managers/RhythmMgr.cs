@@ -154,6 +154,14 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         if (koreographyEvent.HasIntPayload())
         {
             int tmp = koreographyEvent.GetIntValue();
+
+            // 检测是不是退出的代码，即99
+            if(tmp == 99)
+            {
+                // 游戏结束
+                GameManager.GetInstance().GameOver();
+            }
+
             StartCoroutine(DrumBeatDealay(true , tmp ));
         }
         else

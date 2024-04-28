@@ -960,10 +960,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175147304436563236, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5256b8008f4af954e83f20df21caeeae, type: 3}
     - target: {fileID: 175147305061549480, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 175147305061549481, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
+      propertyPath: koreography
+      value: 
+      objectReference: {fileID: 11400000, guid: 66ce70fe86b9b2f44a3105b9c6fe636e, type: 2}
     - target: {fileID: 175147305061549483, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
       propertyPath: hpBar
       value: 
@@ -976,9 +984,17 @@ PrefabInstance:
       propertyPath: beatBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 175147305061549484, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5256b8008f4af954e83f20df21caeeae, type: 3}
     - target: {fileID: 175147305061549485, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
       propertyPath: RhyBar
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 175147305061549485, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
+      propertyPath: eventID
+      value: P5R8bit
       objectReference: {fileID: 0}
     - target: {fileID: 175147305061549486, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
       propertyPath: m_RootOrder

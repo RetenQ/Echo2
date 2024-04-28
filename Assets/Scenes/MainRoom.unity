@@ -3115,7 +3115,7 @@ MonoBehaviour:
   RhyoffItems: []
   nowBeatValue: 0
   levelScore: 0
-  bullet: {fileID: 6666229230416310642, guid: 39efda5b345abd84a922a2c117b0fc5f, type: 3}
+  bullet: {fileID: 1732845792237401363, guid: 473c9322fba78254f8db03be34edc7de, type: 3}
   bullet_ex: {fileID: 5785128562410195200, guid: b58b1e060aa452f478838d54922a5739, type: 3}
   firePosition: {fileID: 996119339}
   bulletSpeed: 20

@@ -9392,7 +9392,8 @@ MonoBehaviour:
   RocketSpeed: 7
   rocketAngle: 0
   rocketLerp: 0.5
-  deathEx: {fileID: 0}
+  deathEx: {fileID: 3232101522712827549, guid: c5b9ecd6dc5ae9146858a17e71daa441, type: 3}
+  hurtEx: {fileID: 6425063691057116307, guid: e3da35b63b62a4943bd4fdfdd82436b9, type: 3}
   radius: 15.69
   segments: 50
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

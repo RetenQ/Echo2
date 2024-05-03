@@ -38,6 +38,8 @@ public class LevelUIMgr : MonoBehaviour
 
         StartCoroutine(FadeIn());
 
+        setTheScoreUI();
+
         setItem();
     }
 

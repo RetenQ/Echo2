@@ -137,6 +137,7 @@ public class GameManager : SingletonMono<GameManager>
         theScore= 0; //清零
 
         theScore = playerSC.levelScore;  //更新
+        playerSC.levelScore = 0; // 清零Player此时的得分
 
         theScore_sum += theScore; 
     }

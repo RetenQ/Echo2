@@ -47,7 +47,8 @@ public class PlayerBase : Chara
     [Header("节奏区域")]
     public float nowBeatValue; // 目前压点的得分 ， 最高100
 
-    public float levelScore; //每层的得分
+    public int levelScore; //每层的得分
+    public int attackUpLevel = 0;//攻击力提升次数。目前只能通过beatvalue获得。
 
     [Header("子弹区")]
     public GameObject bullet;
@@ -69,6 +70,7 @@ public class PlayerBase : Chara
     public AudioSource audio_run;
     public AudioSource audio_attack;
     public AudioSource audio_dash;
+    public AudioSource audio_beatValueSkill;
 
     [Header("子物体")]
     public GameObject attackArea; 
@@ -202,6 +204,8 @@ public class PlayerBase : Chara
 
         if (inRhy)
         {
+            AddBeatPont();
+
             trailEffect_ex.SetActive(true);
             trailEffect_last = trailEffect_ex;
             audio_dash.clip = dashClips[1];
@@ -338,6 +342,11 @@ public class PlayerBase : Chara
             // isdash = false;
             dashTimer -= Time.deltaTime;
         }
+
+        if(nowBeatValue >= 100)
+        {
+            ClearBeatValue();//消耗并释放技能
+        }
     }
 
 
@@ -347,6 +356,7 @@ public class PlayerBase : Chara
 
         if (inRhy)
         {
+            AddBeatPont();
             audio_attack.clip = attackClips[1];
             audio_attack.Play();
 
@@ -356,6 +366,7 @@ public class PlayerBase : Chara
         }
         else
         {
+            SubBeatPont();
             audio_attack.clip = attackClips[0];
             audio_attack.Play();
             GameObject bullet_temp = Instantiate(bullet, firePosition.position, Quaternion.identity);
@@ -408,26 +419,58 @@ public class PlayerBase : Chara
     }
 
     // 控制beat的区域
+    // 节奏点击中+10
     public void AddBeatPont()
     {
         if(nowBeatValue < 100)
         {
             nowBeatValue += 10; //默认+10
         }
+        levelScore += 3;  //每次成功都给总积分+3;
     }
 
-    public void AddBeatPont(float _value)
+    public void AddBeatPont(int _value)
     {
         if(nowBeatValue + _value <= 100)
         {
-            nowBeatValue += _value; 
+            nowBeatValue += _value;
+        }
+        else
+        {
+            nowBeatValue = 1000;
         }
     }
+
+    //  没在节奏点默认-55
+    public void SubBeatPont()
+    {
+        if (nowBeatValue > 5)
+        {
+            nowBeatValue -= 5; //默认-10
+        }
+    }
+
+    public void SubBeatPont(int _value)
+    {
+        if (nowBeatValue - _value >= 0)
+        {
+            nowBeatValue -= _value;
+        }
+        else
+        {
+            nowBeatValue = 0;
+        }
+    }
+
 
     public void ClearBeatValue()
     {
         // 触发一些技能
-
+        audio_beatValueSkill.Play();
+        // 目前是是攻击力+10，血量回复30
+        this.attack += 10;
+        attackUpLevel++;
+        Heal(30); 
         //
         nowBeatValue = 0;
     }

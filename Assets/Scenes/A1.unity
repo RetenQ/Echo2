@@ -66276,6 +66276,8 @@ MonoBehaviour:
   - {fileID: 2125256064}
   - {fileID: 678700251}
   EnemySum: 9
+  isBoss: 0
+  nextScene: DemoOver
 --- !u!4 &1387935505
 Transform:
   m_ObjectHideFlags: 0

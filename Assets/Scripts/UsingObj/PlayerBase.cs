@@ -55,6 +55,7 @@ public class PlayerBase : Chara
     public Transform firePosition;
     public float bulletSpeed; 
     public float bulletSpeed_ex; 
+    public float bulletEx_AttackMul;  // 测试用，设置为2倍
 
     [Header("组件")]
     public Rigidbody2D rb;
@@ -350,7 +351,7 @@ public class PlayerBase : Chara
             audio_attack.Play();
 
             GameObject bullet_temp = Instantiate(bullet_ex, firePosition.position, Quaternion.identity);
-            bullet_temp.GetComponent<Bullet>().SetBullet(attack , 2.0f , this);
+            bullet_temp.GetComponent<Bullet>().SetBullet(attack, bulletEx_AttackMul, this); // 增加伤害
             bullet_temp.GetComponent<Rigidbody2D>().AddForce(ToMouseDirection * bulletSpeed_ex, ForceMode2D.Impulse);
         }
         else

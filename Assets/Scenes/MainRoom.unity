@@ -29762,6 +29762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175147304436563236, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 175147305061549480, guid: 9bddb245d90cddd4fb4a1dd76b69cee2, type: 3}
       propertyPath: m_Name
       value: Managers

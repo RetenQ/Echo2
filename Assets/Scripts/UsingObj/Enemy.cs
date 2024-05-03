@@ -33,6 +33,8 @@ public class Enemy : Chara
     public AudioSource audio;  //
     public Rigidbody2D rb;
     public Image hpBar;
+    public Image hpBarBK;
+    public float downSpeed = 1.5f; 
     public TextMeshProUGUI DamageNum;
 
     [Header("“Ù–ß")]
@@ -89,6 +91,7 @@ public class Enemy : Chara
         rb = GetComponent<Rigidbody2D>();
 
         hpBar = transform.Find("Char_State_UI").Find("HP").gameObject.GetComponent<Image>();
+        hpBarBK = transform.Find("Char_State_UI").Find("HpBackGround").gameObject.GetComponent<Image>();
         DamageNum = transform.Find("Char_State_UI").Find("DamageNum").gameObject.gameObject.GetComponent<TextMeshProUGUI>();
 
         firePoint = transform.Find("Firepoint").gameObject; 
@@ -172,8 +175,22 @@ public class Enemy : Chara
 
     private void DataUpdater()
     {
+        UpdateHPBar();
+    }
+
+    protected void UpdateHPBar()
+    {
         hpBar.fillAmount = nowHp * 1.0f / maxHp;
 
+        if(hpBarBK.fillAmount >= hpBar.fillAmount)
+        {
+            hpBarBK.fillAmount -= Time.deltaTime * downSpeed; 
+        }
+
+        if(hpBar.fillAmount <= 0.1f)
+        {
+            hpBarBK.fillAmount = 0.0f;
+        }
     }
 
     public override void Hurt(float _damage, BaseObj _hurtby)

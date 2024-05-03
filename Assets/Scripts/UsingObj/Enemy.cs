@@ -63,6 +63,7 @@ public class Enemy : Chara
 
     [Header("ËÀÍöÌØĞ§")]
     public GameObject deathEx; 
+    public GameObject hurtEx; 
 
 
     public void setRoomManager(GameObject _mgr)
@@ -179,6 +180,7 @@ public class Enemy : Chara
 
         _hurtby.UpdateLastAttack(this);
         lastHurtby = _hurtby;
+        GameObject _hurtex = GameObject.Instantiate(hurtEx, transform.position, Quaternion.identity);
     }
 
     public virtual void FindPlayer()

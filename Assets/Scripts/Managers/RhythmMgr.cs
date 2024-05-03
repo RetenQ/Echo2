@@ -148,7 +148,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
     private void DrumBeat(KoreographyEvent koreographyEvent)
     {
-        Debug.Log("接受到： " + Time.time);
         genRhyUI(); //生成UI
 
         if (koreographyEvent.HasIntPayload())
@@ -171,22 +170,6 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
         }
 
 
-        //genRhyUI();
-        // 到鼓点了干什么    
-        // 测试payloads
-/*        if (koreographyEvent.HasIntPayload())
-        {
-            int tmp = koreographyEvent.GetIntValue();
-            // Debug.Log("ITS :|||" + tmp);
-            NotifyObjs(tmp);
-            PlayerRhyOn();
-        }
-        else
-        {
-            NotifyObjs(0);
-            PlayerRhyOn();
-        }*/
-        //
     }
 
     IEnumerator DrumBeatDealay(bool havePayLoad , int tmp)

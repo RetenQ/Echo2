@@ -697,6 +697,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &678700251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678700253}
+  - component: {fileID: 678700252}
+  m_Layer: 9
+  m_Name: EnemyGen (2)
+  m_TagString: Enemy
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678700252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678700251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d338c46b9fb4944eb60d37e75354990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alive: 0
+  maxHp: 9999
+  nowHp: 9999
+  attack: 0
+  speed: 0
+  lastAttackto: {fileID: 0}
+  lastHurtby: {fileID: 0}
+  isRhyObj: 1
+  isRhyAct: 0
+  KorePayload: 0
+  gen_sum: 3
+  gen_timer_set: 3
+  gen_timer: 0
+  roomMgr: {fileID: 1387935504}
+  enemyPool:
+  - {fileID: 2084316734489024085, guid: f47fb9c46e0e5f54e9e2b16156a98084, type: 3}
+  - {fileID: 4783043258637750924, guid: 71a1b17c3fba8154487cff983aa34e82, type: 3}
+--- !u!4 &678700253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678700251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.31, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &683766430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66212,7 +66273,9 @@ MonoBehaviour:
   - {fileID: 2107521598}
   enenmyGen:
   - {fileID: 1585029301}
-  EnemySum: 3
+  - {fileID: 2125256064}
+  - {fileID: 678700251}
+  EnemySum: 9
 --- !u!4 &1387935505
 Transform:
   m_ObjectHideFlags: 0
@@ -66999,6 +67062,67 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2524708231605484867, guid: df0aa30706dba6a46940516be172aafb, type: 3}
   m_PrefabInstance: {fileID: 2107521597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2125256064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125256066}
+  - component: {fileID: 2125256065}
+  m_Layer: 9
+  m_Name: EnemyGen (1)
+  m_TagString: Enemy
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2125256065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125256064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d338c46b9fb4944eb60d37e75354990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alive: 0
+  maxHp: 9999
+  nowHp: 9999
+  attack: 0
+  speed: 0
+  lastAttackto: {fileID: 0}
+  lastHurtby: {fileID: 0}
+  isRhyObj: 1
+  isRhyAct: 0
+  KorePayload: 0
+  gen_sum: 3
+  gen_timer_set: 3
+  gen_timer: 0
+  roomMgr: {fileID: 1387935504}
+  enemyPool:
+  - {fileID: 2084316734489024085, guid: f47fb9c46e0e5f54e9e2b16156a98084, type: 3}
+  - {fileID: 4783043258637750924, guid: 71a1b17c3fba8154487cff983aa34e82, type: 3}
+--- !u!4 &2125256066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125256064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.93, y: -5.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5172978472662840660
 PrefabInstance:
   m_ObjectHideFlags: 0

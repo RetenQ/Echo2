@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,7 @@ public class Enemy : Chara
     public AudioSource audio;  //
     public Rigidbody2D rb;
     public Image hpBar;
+    public TextMeshProUGUI DamageNum;
 
     [Header("音效")]
     public AudioSource Audio_attack;
@@ -87,6 +89,8 @@ public class Enemy : Chara
         rb = GetComponent<Rigidbody2D>();
 
         hpBar = transform.Find("Char_State_UI").Find("HP").gameObject.GetComponent<Image>();
+        DamageNum = transform.Find("Char_State_UI").Find("DamageNum").gameObject.gameObject.GetComponent<TextMeshProUGUI>();
+
         firePoint = transform.Find("Firepoint").gameObject; 
 
         Nav2dAgent = GetComponent<NavMeshAgent2D>();
@@ -158,6 +162,7 @@ public class Enemy : Chara
         base.ObjDeath();
         // 敌人通用的死亡
 
+        CloseTMPUI(); //关闭显示
         // 在room中取消订阅
         roomMgr.GetComponent<RoomMgr>().ReomveObj(gameObject);
 
@@ -181,7 +186,18 @@ public class Enemy : Chara
         _hurtby.UpdateLastAttack(this);
         lastHurtby = _hurtby;
         GameObject _hurtex = GameObject.Instantiate(hurtEx, transform.position, Quaternion.identity);
+        DamageNum.text = _damage.ToString();
+        DamageNum.gameObject.SetActive(true);
+        Invoke("CloseTMPUI", 1.0f);//关闭
     }
+
+    private void CloseTMPUI()
+    {
+        DamageNum.gameObject.SetActive(false);
+
+    }
+
+
 
     public virtual void FindPlayer()
     {

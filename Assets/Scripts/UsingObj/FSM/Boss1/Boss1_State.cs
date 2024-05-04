@@ -119,7 +119,7 @@ public class LaserSate : IState
             
         }
 
-        Debug.Log(maxCnt);
+       // Debug.Log(maxCnt);
         maxCnt = 10;
 
         lasers.Clear();

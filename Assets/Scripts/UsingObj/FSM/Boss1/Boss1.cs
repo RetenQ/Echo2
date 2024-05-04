@@ -126,6 +126,8 @@ public class Boss1 : FSM_Enemy
         }
         else if (KorePayload == 2)
         {
+            Audio_attack.Play();
+
             TransitionState(StateType.Laser);
         }
         else if (KorePayload == 3 )
@@ -145,6 +147,8 @@ public class Boss1 : FSM_Enemy
             }
             else if (tmpState == 2)
             {
+                Audio_attack.Play();
+
                 TransitionState(StateType.Laser);
             }
             else if (tmpState == 3)
@@ -154,11 +158,13 @@ public class Boss1 : FSM_Enemy
 
         }else if(KorePayload == 5)
         {
+            Audio_attack.Play();
             BasicAttack();
         }
         else if(KorePayload == 6)
         {
-             RandomAttack();
+            Audio_attack.Play();
+            RandomAttack();
         }else if(KorePayload == 99)
         {
             GameManager.GetInstance().LoadNextScene("DemoOver");

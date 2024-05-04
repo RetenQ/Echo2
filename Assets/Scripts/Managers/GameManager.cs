@@ -62,6 +62,11 @@ public class GameManager : SingletonMono<GameManager>
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadMenu();
+        }
+
         // 测试用。由于还没有目前的流程还不足以完全使用SaveSystem (没有好的时机使用)
         // 我们这里测试以验证其是可行的
         if (Input.GetKeyDown(KeyCode.Keypad0)){
@@ -189,6 +194,11 @@ public class GameManager : SingletonMono<GameManager>
     public void LoadNextScene(string _name)
     {
         SceneManager.LoadScene(_name); //
+    }
+
+    public void LoadMenu()
+    {
+        LoadNextScene("Menu");
     }
 
     public void GameOver()

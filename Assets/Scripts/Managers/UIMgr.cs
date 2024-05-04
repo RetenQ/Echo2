@@ -69,24 +69,30 @@ public class UIMgr : SingletonMono<UIMgr>
     {
         string tem = _score.ToString()+"  ";
         string oth = " "; 
-        if(_score > 30)
+
+        if(_score < 30)
+        {
+            oth = " O _ O ";
+
+        }
+
+        if (_score > 30)
         {
             oth = " Q v Q ";
         }
-        else if(_score > 50)
+        
+        if(_score > 50)
         {
             oth = "O w O ";
 
         }
-        else if(_score > 100)
+        
+        if(_score > 100)
         {
             oth = "> w < ";
 
         }
-        else
-        {
-            oth = " O _ O";
-        }
+
 
         beatValue.text = tem + oth;
 

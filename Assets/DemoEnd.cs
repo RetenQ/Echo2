@@ -13,6 +13,7 @@ public class DemoEnd : MonoBehaviour
         if (Input.anyKeyDown)
         {
             SceneManager.LoadScene(toNext);
+            GameManager.GetInstance().LongsaveByJson();
         }
     }
 }

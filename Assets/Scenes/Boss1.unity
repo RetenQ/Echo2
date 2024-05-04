@@ -1371,7 +1371,7 @@ MonoBehaviour:
   EnemySum: 1
   isBoss: 1
   nextScene: DemoOver
-  delayTime: 5
+  delayTime: 2
 --- !u!4 &641763359
 Transform:
   m_ObjectHideFlags: 0

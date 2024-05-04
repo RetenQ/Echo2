@@ -517,7 +517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 4.3499756, y: 183}
+  m_AnchoredPosition: {x: 4.3499756, y: 229}
   m_SizeDelta: {x: 1911.3, y: 311.4566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361868951
@@ -548,7 +548,10 @@ MonoBehaviour:
     world? Besides your combat skills, you also remember one thing:
 
     "Climb to
-    the top of the tower, where there is the truth of everything"'
+    the top of the tower, where there is the truth of everything"
+
+    (press any
+    key to come back to MainRoom)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b51dbee9f2f047cebc9e85675fb05d5, type: 2}
   m_sharedMaterial: {fileID: -4171563015097924827, guid: 0b51dbee9f2f047cebc9e85675fb05d5, type: 2}

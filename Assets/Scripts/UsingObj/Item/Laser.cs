@@ -19,6 +19,9 @@ public class Laser : MonoBehaviour
     public Color ActColor;
     public float ActWidth;
 
+    [Header("Audio")]
+    public AudioSource preAudio;
+    public AudioSource activeAudio;
 
 
     void Start()
@@ -69,6 +72,9 @@ public class Laser : MonoBehaviour
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, destination.transform.position);
         }
+
+        preAudio.Play();
+
     }
 
     // 在挂载函数的物体和一个名为destination的gameObject之间绘制一个橙色的线，并且打印其中所有的物体的名字
@@ -95,6 +101,8 @@ public class Laser : MonoBehaviour
 
             //SetLaser(); // 绘制橙色的线
         }
+
+        activeAudio.Play();
 
         StartCoroutine(LaserEnd_IE());
 

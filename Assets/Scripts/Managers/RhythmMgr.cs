@@ -175,11 +175,11 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
     IEnumerator DrumBeatDealay(bool havePayLoad , int tmp)
     {
 
-        Debug.Log("Coroutine started, waiting for " + delayPlaySET + " seconds...");
+        // Debug.Log("Coroutine started, waiting for " + delayPlaySET + " seconds...");
 
         yield return new WaitForSeconds(delayPlaySET - AllowPressAdvance); //实际上设置了可以提前多久触发
 
-        Debug.Log("Delayed function executed after " + delayPlaySET + " seconds");
+        // Debug.Log("Delayed function executed after " + delayPlaySET + " seconds");
 
         DrumBeatDealay_Real(havePayLoad , tmp);
 
@@ -187,7 +187,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
     private void DrumBeatDealay_Real(bool havePayLoad, int tmp)
     {
-        Debug.Log("调用到： " + Time.time);
+        // Debug.Log("调用到： " + Time.time);
 
         if (havePayLoad)
         {
@@ -277,7 +277,7 @@ public class RhythmMgr : SingletonMono<RhythmMgr>
 
     public void genRhyUI()
     {
-        Debug.Log("生成Drum "+Time.time);
+        // Debug.Log("生成Drum "+Time.time);
 
         // 创建新的Image并设置其位置和Sprite  
         GameObject newImageObj = new GameObject("Moving Image");

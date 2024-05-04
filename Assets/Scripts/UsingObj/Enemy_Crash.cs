@@ -13,6 +13,8 @@ public class Enemy_Crash : Enemy
 
     public override void Attack()
     {
+
+        Nav2dAgent.speed = 5; 
         // 冲撞的部分需要修改Nav ， 暂不做
         hasAttack = false;
         // 如果目标物体存在

@@ -13,6 +13,11 @@ public class RoomMgr : MonoBehaviour
 
     public int EnemySum; //敌人总数
 
+    [Header("临时测试用")]
+    public bool isBoss = false;
+    public string nextScene; 
+    public float delayTime; 
+
     private void Start()
     {
         IniEnemyInList();
@@ -91,6 +96,16 @@ public class RoomMgr : MonoBehaviour
         {
             _door.SetActive(false);
         }
+
+        if (isBoss)
+        {
+            Invoke("IntoNextScene", delayTime);
+        }
+    }
+
+    private void IntoNextScene()
+    {
+        GameManager.GetInstance().LoadNextScene(nextScene);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

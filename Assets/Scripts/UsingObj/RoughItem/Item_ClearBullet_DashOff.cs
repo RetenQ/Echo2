@@ -18,7 +18,7 @@ public class Item_ClearBullet_DashOff : RogueItem
 
     public void ClearBullet(Vector2 pos)
     {
-        Debug.Log("Clear");
+        //Debug.Log("Clear");
 
         Collider2D[] colliders = new Collider2D[10]; // 限制数组大小
         int colliderCount = Physics2D.OverlapCircleNonAlloc(pos, radius, colliders);

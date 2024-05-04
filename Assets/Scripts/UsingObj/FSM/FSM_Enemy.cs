@@ -17,14 +17,14 @@ public class FSM_Enemy : Enemy
     {
         // ÇÐ»»×´Ì¬
 
-        Debug.Log("Exit£º"+currentState);
+        //Debug.Log("Exit£º"+currentState);
         if (currentState != null)
         {
             currentState.OnExit();
         }
 
         currentState = states[type];
-        Debug.Log("Enter£º"+currentState);
+        //Debug.Log("Enter£º"+currentState);
         currentState.OnEnter();
     }
 

@@ -38,6 +38,8 @@ public class LevelUIMgr : MonoBehaviour
 
         StartCoroutine(FadeIn());
 
+        setTheScoreUI();
+
         setItem();
     }
 
@@ -65,7 +67,7 @@ public class LevelUIMgr : MonoBehaviour
         RIText2 = RIButton2.gameObject.transform.Find("ItemDescribe").gameObject.GetComponent<TextMeshProUGUI>();
         RIText3 = RIButton3.gameObject.transform.Find("ItemDescribe").gameObject.GetComponent<TextMeshProUGUI>();
 
-        levelScore = RogueItem.transform.Find("backGround").Find("Right").Find("YourScore").GetComponent<TextMeshProUGUI>();
+        levelScore = RogueItem.transform.Find("backGround").Find("Right").Find("Score_Num").GetComponent<TextMeshProUGUI>();
     }
 
     public void RIButton1Fun()

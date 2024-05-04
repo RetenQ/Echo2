@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,10 @@ public class UIMgr : SingletonMono<UIMgr>
     [Header("UI组件区")]
     public GameObject MainUI_Playing; 
     public Scrollbar hpBar;
-    public Scrollbar RhythmBar;
+    public Scrollbar scoreBar;
+    public Scrollbar RhythmScoreBar;
+    public TextMeshProUGUI beatValue ;
+    public TextMeshProUGUI AttackUpNum ;
     public Image DashCD;
 
     public Image RhyBar;
@@ -30,7 +34,11 @@ public class UIMgr : SingletonMono<UIMgr>
         PlayerSc = Player.GetComponent<PlayerBase>();
 
         hpBar = MainUI_Playing.transform.Find("HealthBar").GetComponent<Scrollbar>();
-        RhythmBar = MainUI_Playing.transform.Find("RhythmBar").GetComponent<Scrollbar>();
+        RhythmScoreBar = MainUI_Playing.transform.Find("RhythmBar").GetComponent<Scrollbar>();
+
+        beatValue = MainUI_Playing.transform.Find("BeatValue").GetComponent<TextMeshProUGUI>();
+        AttackUpNum = MainUI_Playing.transform.Find("AtackUpNum").GetComponent<TextMeshProUGUI>();
+
         DashCD = MainUI_Playing.transform.Find("DashCD").GetComponent<Image>();
         RhyBar = MainUI_Playing.transform.Find("OrangeImg").GetComponent<Image>();
 
@@ -46,12 +54,42 @@ public class UIMgr : SingletonMono<UIMgr>
     {
         // 对于Scrollbar调整的是size
         hpBar.size = PlayerSc.nowHp / PlayerSc.maxHp;
-        RhythmBar.size = PlayerSc.nowBeatValue / (100.0f); // 最大值反正是100
+
+        RhythmScoreBar.size = PlayerSc.nowBeatValue / (100.0f); // 最大值反正是100
+
         DashCD.fillAmount = PlayerSc.dashTimer / PlayerSc.dashCD;
 
         RhyBar.fillAmount = (1.0f - ((RhythmMgr.GetInstance().gettimeToArrive()) /
             (RhythmMgr.GetInstance().getdelayPlay_Record())));
 
+        UpdateBeatBalue(PlayerSc.levelScore);
 
+    }
+    public void UpdateBeatBalue(int _score)
+    {
+        string tem = _score.ToString()+"  ";
+        string oth = " "; 
+        if(_score > 30)
+        {
+            oth = " Q v Q ";
+        }
+        else if(_score > 50)
+        {
+            oth = "O w O ";
+
+        }
+        else if(_score > 100)
+        {
+            oth = "> w < ";
+
+        }
+        else
+        {
+            oth = " O _ O";
+        }
+
+        beatValue.text = tem + oth;
+
+        AttackUpNum.text = PlayerSc.attackUpLevel.ToString(); 
     }
 }

@@ -49,7 +49,11 @@ public class Boss1 : FSM_Enemy
         audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
 
-        hpBar = transform.Find("Char_State_UI").Find("HP").gameObject.GetComponent<Image>();
+
+        // Boss UI 手动设计
+/*        hpBar = transform.Find("Char_State_UI").Find("HP").gameObject.GetComponent<Image>();
+        hpBarBK = transform.Find("Char_State_UI").Find("HpBackGround").gameObject.GetComponent<Image>();*/
+
         firePoint = transform.Find("Firepoint").gameObject;
 
         Nav2dAgent = GetComponent<NavMeshAgent2D>();
@@ -85,9 +89,12 @@ public class Boss1 : FSM_Enemy
         // Update就执行当前的Update
         currentState.OnUpdate();
 
-/*        if(Input.GetKeyDown(KeyCode.U)) MulAttack();
-        if(Input.GetKeyDown(KeyCode.I)) FullAttack();
-        if(Input.GetKeyDown(KeyCode.O)) RocketAttack();*/
+        UpdateHPBar();
+        // hpBar.fillAmount = nowHp * 1.0f / maxHp; // 单独给它增加了一行血量
+
+        /*        if(Input.GetKeyDown(KeyCode.U)) MulAttack();
+                if(Input.GetKeyDown(KeyCode.I)) FullAttack();
+                if(Input.GetKeyDown(KeyCode.O)) RocketAttack();*/
 
     }
 
@@ -119,6 +126,8 @@ public class Boss1 : FSM_Enemy
         }
         else if (KorePayload == 2)
         {
+            Audio_attack.Play();
+
             TransitionState(StateType.Laser);
         }
         else if (KorePayload == 3 )
@@ -138,6 +147,8 @@ public class Boss1 : FSM_Enemy
             }
             else if (tmpState == 2)
             {
+                Audio_attack.Play();
+
                 TransitionState(StateType.Laser);
             }
             else if (tmpState == 3)
@@ -147,11 +158,16 @@ public class Boss1 : FSM_Enemy
 
         }else if(KorePayload == 5)
         {
+            Audio_attack.Play();
             BasicAttack();
         }
         else if(KorePayload == 6)
         {
-             RandomAttack();
+            Audio_attack.Play();
+            RandomAttack();
+        }else if(KorePayload == 99)
+        {
+            GameManager.GetInstance().LoadNextScene("DemoOver");
         }
         else
         {

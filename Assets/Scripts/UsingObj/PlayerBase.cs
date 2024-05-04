@@ -73,6 +73,7 @@ public class PlayerBase : Chara
     public AudioSource audio_beatValueSkill;
 
     [Header("子物体")]
+    public GameObject UpEffect; 
     public GameObject attackArea; 
     public Player_AttackArea attackAreaSC; 
 
@@ -470,6 +471,9 @@ public class PlayerBase : Chara
         // 目前是是攻击力+10，血量回复30
         this.attack += 10;
         attackUpLevel++;
+
+        GameObject upef = GameObject.Instantiate(UpEffect, transform.position ,Quaternion.identity);
+
         Heal(30); 
         //
         nowBeatValue = 0;

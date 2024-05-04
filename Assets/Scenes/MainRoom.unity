@@ -3662,6 +3662,7 @@ MonoBehaviour:
   audio_attack: {fileID: 248666845}
   audio_dash: {fileID: 2126395032}
   audio_beatValueSkill: {fileID: 761053619}
+  UpEffect: {fileID: 3080385013478151481, guid: 548568bda1b19164d8357b068ffc4215, type: 3}
   attackArea: {fileID: 0}
   attackAreaSC: {fileID: 0}
 --- !u!95 &1386469459
@@ -3725,7 +3726,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -691315721
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 600501938, guid: ea1c6e2a33d2ecd4cafe7c9477ee7093, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

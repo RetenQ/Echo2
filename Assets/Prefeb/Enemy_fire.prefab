@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.5
+  _speed: 1
   _angularSpeed: 120
   _acceleration: 8
   _stoppingDistance: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   Enemybullet: {fileID: 9051357485124932279, guid: 3b41760b4c7a690498027125f3f3af33, type: 3}
   bulletSpeed: 10
   target: {fileID: 0}
-  AttackCD: 2
+  AttackCD: 1
   activeArrange: 0
   attackArrange: 5.72
   attackCDTimer: 0
@@ -291,11 +291,11 @@ MonoBehaviour:
   DamageNum: {fileID: 0}
   Audio_attack: {fileID: 4783043258637750970}
   Audio_hurt: {fileID: 4783043258637750917}
-  rotationAngle_Set: 0
-  rotationChange: 0
-  MulSpeed: 0
-  bulletNum: 0
-  bulletWave: 0
+  rotationAngle_Set: 10
+  rotationChange: 10
+  MulSpeed: 3
+  bulletNum: 5
+  bulletWave: 1
   MulfirePoint: {fileID: 0}
   MulBullet: {fileID: 2168593394703369890, guid: 8305960cc896e5b4aad0fe8363c3a058, type: 3}
   FullfirePoint: {fileID: 0}

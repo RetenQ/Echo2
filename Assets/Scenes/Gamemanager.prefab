@@ -59,3 +59,4 @@ MonoBehaviour:
   stageA_list: []
   saveLevel_list: []
   gameTime: 0
+  LastIn: 

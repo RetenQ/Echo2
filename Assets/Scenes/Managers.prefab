@@ -318,7 +318,7 @@ MonoBehaviour:
   scoreBar: {fileID: 0}
   RhythmScoreBar: {fileID: 0}
   beatValue: {fileID: 0}
-  AttackUp: {fileID: 0}
+  AttackUpNum: {fileID: 0}
   DashCD: {fileID: 0}
   RhyBar: {fileID: 0}
 --- !u!114 &175147305061549482

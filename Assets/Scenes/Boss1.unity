@@ -528,6 +528,7 @@ MonoBehaviour:
   audio_attack: {fileID: 107157118}
   audio_dash: {fileID: 550940189}
   audio_beatValueSkill: {fileID: 1457921354}
+  UpEffect: {fileID: 3080385013478151481, guid: 548568bda1b19164d8357b068ffc4215, type: 3}
   attackArea: {fileID: 0}
   attackAreaSC: {fileID: 0}
 --- !u!95 &362793311
@@ -9795,7 +9796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 8000
+  maxHp: 6000
   nowHp: 0
   attack: 10
   speed: 5

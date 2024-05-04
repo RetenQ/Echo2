@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 768575951}
   - component: {fileID: 768575950}
   - component: {fileID: 768575949}
+  - component: {fileID: 768575953}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -468,6 +469,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768575953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768575948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d56203858705ac44b1b17256159b5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1361868949
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +546,8 @@ MonoBehaviour:
     what is your name? What is the truth about the disappearance of music in the
     world? Besides your combat skills, you also remember one thing:
 
-    "Climb
-    to the top of the tower, where there is the truth of everything"'
+    "Climb to
+    the top of the tower, where there is the truth of everything"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b51dbee9f2f047cebc9e85675fb05d5, type: 2}
   m_sharedMaterial: {fileID: -4171563015097924827, guid: 0b51dbee9f2f047cebc9e85675fb05d5, type: 2}

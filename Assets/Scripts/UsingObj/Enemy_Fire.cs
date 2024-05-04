@@ -14,6 +14,8 @@ public class Enemy_Fire : Enemy
         Vector2 direction = (Player.transform.position - firePoint.transform.position).normalized;
        // Debug.Log("Dir" + direction);
         bullet_temp.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
+
+        MulAttack();
     }
 
 

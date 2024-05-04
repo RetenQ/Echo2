@@ -3,7 +3,9 @@
 ## 版本声明
 V0.8 为MIEC学院的moodle版本的论文，对应的游戏版本
 V0.9 为MIEC学院答辩时使用的版本。主要优化了攻击特效和音效（最新版本）
+
 V0.8 is the Moodle version of the paper from MIEC Academy, corresponding to the game version
+
 V0.9 is the version used by MIEC Academy for defense. Mainly optimized attack effects and sound effects (latest version)
 
 后面如果有机会的话大概还会继续更新
@@ -15,10 +17,13 @@ If there is a chance in the future, it will probably continue to be updated
 游戏风格为“像素+奇幻+复古”
 
 This is a 2D shooting game that combines the characteristics of rhythm games
+
 Simply put, it means that players need to act according to the rhythm. At the same time, some enemies also attacked according to the drumbeat
+
 The game style is "Pixel+Fantasy+Retro"
 
 游戏内的部分音频为不可商用版本，本人上传至github仅为学习和存档使用
+
 Some of the audio in the game is a non commercial version, and I have uploaded it to GitHub for learning and saving purposes only
 
 ## 特别鸣谢

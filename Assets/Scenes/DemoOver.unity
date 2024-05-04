@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d56203858705ac44b1b17256159b5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toNext: Boss1
 --- !u!1 &1361868949
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class DemoEnd : MonoBehaviour
 {
+    public string toNext; // "MainRoom"
 
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("MainRoom");
+            SceneManager.LoadScene(toNext);
         }
     }
 }

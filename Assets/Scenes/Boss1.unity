@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  maxHp: 200
+  maxHp: 500
   nowHp: 0
   attack: 10
   speed: 3
